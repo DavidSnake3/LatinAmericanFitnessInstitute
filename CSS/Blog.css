@@ -1,0 +1,93 @@
+/* BLOG*/
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.blog-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary.active {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+#loadMoreBtn {
+    transition: all 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+    transform: scale(1.05);
+}
+
+.category-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.dropdown-menu {
+    background-color: var(--dark-color);
+    border-color: var(--primary-color);
+}
+
+.dropdown-item {
+    color: var(--primary-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* Add these rules to your existing CSS file */
+
+/* Target only the blog section */
+#Blog .card-text {
+    color: rgb(255, 255, 255);
+}
+#Blog .card-title{
+color: #615f5f;
+    
+}
+
+#Blog .card-footer .text-muted {
+    color: #d0d0d0 !important; /* Light grey color for better visibility */
+}
+
+#Blog .feature-card.blog-card {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+}
+
+/* If you need to target specific elements more precisely, you can use the data-category attribute */
+#Blog .blog-item[data-category] .card-text {
+    color: white;
+}
+
+#Blog .blog-item[data-category] .card-title.neon-text {
+    color: #a0a0a0;
+}
+
+#Blog .blog-item[data-category] .card-footer .text-muted {
+    color: #d0d0d0 !important;
+}
+
+#Blog .blog-item[data-category] .feature-card.blog-card {
+    background-color: rgba(0, 0, 0, 0.7);
+}

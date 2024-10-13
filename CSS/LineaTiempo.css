@@ -1,0 +1,161 @@
+/* Estilos del Timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #1a1332;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-progress {
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, #6c3ce9 0%, #1a1332 100%);
+    top: 0;
+    bottom: 0;
+    left: 49.8%;
+    margin-left: -1px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+.timeline-item {
+    padding: 40px 0;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #6c3ce9;
+    border: 4px solid #6c3ce9;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.content, .image-container {
+    width: 45%;
+}
+.content {
+    padding: 20px 30px;
+    background-color: #1a1332;
+    border-radius: 6px;
+}
+.left {
+    text-align: right;
+}
+.right {
+    text-align: left;
+}
+.module-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(108, 60, 233, 0.5);
+}
+.step-number {
+    color: #0100fd;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* Estilos para las tarjetas de información */
+.info-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--secondary-color);
+}
+.info-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.info-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.info-card li {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.info-card i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+
+.image-section {
+    position: relative;
+    margin-top: 40px; /* Espacio superior */
+}
+
+.image-section img.small-image {
+    width: 100%; /* Ajusta el tamaño de la imagen al 50% del contenedor */
+    max-width: 100%; /* Establece un ancho máximo si lo deseas */
+    border-radius: 10px; /* Bordes redondeados */
+    filter: blur(2px); /* Efecto de desenfoque */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Degradado que se desvanece hacia abajo */
+    border-radius: 10px; /* Asegura que el degradado tenga los mismos bordes redondeados */
+    z-index: 1; /* Debe estar encima de la imagen, pero detrás del contenido */
+}
+
+.btn-contact {
+    position: absolute; /* Hace que el botón esté en relación a .image-section */
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+    display: inline-block;
+    margin-top: 20px; /* Espacio entre la imagen y el botón */
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 2; /* Asegura que el botón esté por encima de todo */
+}
+
+.btn-contact:hover {
+    background-color: var(--secondary-color); /* Cambia a color secundario en hover */
+    transform: translateY(-5px);
+}

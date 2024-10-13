@@ -1,0 +1,53 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Aumentado el espacio entre iconos */
+}
+
+.social-icon {
+    color: var(--primary-color);
+    font-size: 1.8rem; /* Aumentado el tamaño de los iconos */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.1);
+}

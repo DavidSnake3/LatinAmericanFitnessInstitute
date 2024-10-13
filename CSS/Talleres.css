@@ -1,0 +1,21 @@
+#Talleres {
+    color: white;
+}
+
+#Talleres .card {
+    background-color: rgba(26, 19, 50, 0.8); /* Dark background for better contrast */
+}
+
+#Talleres .card-title{
+
+    color:#ffffff7a ;
+}
+
+#Talleres .card-text {
+    color: white;
+}
+
+#Talleres .fas {
+    color: var(--primary-color); /* Keeping the icon color as it was */
+}
+

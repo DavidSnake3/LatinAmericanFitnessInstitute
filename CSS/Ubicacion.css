@@ -1,0 +1,48 @@
+#ubicacion {
+  background-image: url(/img/MaxFoto.jpg); /* Cambia la ruta por la de tu imagen */
+  background-size: cover; /* La imagen cubrirá todo el contenedor */
+  background-position: center; /* La imagen estará centrada */
+  background-attachment: fixed; /* El fondo se moverá al hacer scroll */
+  position: relative;
+  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  z-index: 1;
+  overflow: hidden;
+}
+
+#ubicacion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Filtro oscuro para mejorar la legibilidad del texto */
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.location-info, .map-container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.location-info:hover, .map-container:hover {
+  transform: translateY(-5px);
+}
+
+.map-container iframe {
+  border-radius: 10px;
+}
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* O lo que necesites para centrar verticalmente */
+}
