@@ -47,7 +47,7 @@
 
 .expanded-card h3 {
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 10px;
     text-transform: uppercase;
 }

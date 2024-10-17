@@ -77,14 +77,14 @@
 }
 
 .user-message {
-    background-color: var(--primary-color);
+    background-color: var(--light-color);
     color: var(--dark-color);
     align-self: flex-end;
     margin-left: auto;
 }
 
 .bot-message {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--dark-color);
     align-self: flex-start;
 }
