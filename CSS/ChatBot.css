@@ -1,7 +1,7 @@
 /* Chatbot*/
 .chatbot-container {
     position: fixed;
-    bottom: 20px; /* Cambiado de 80px a 20px */
+    bottom: 20px; 
     right: 20px;
     width: 400px;
     height: 500px;
@@ -55,7 +55,7 @@
 
 .chatbot-toggle {
     position: fixed;
-    bottom: 20px; /* Mantiene la misma distancia que el contenedor */
+    bottom: 20px; 
     right: 20px;
     z-index: 1000;
     border-radius: 50%;
@@ -90,10 +90,10 @@
 }
 
 #chatMessages a {
-    color: blue; /* Color azul para los enlaces */
-    text-decoration: underline; /* Subrayar los enlaces */
+    color: blue; 
+    text-decoration: underline; 
 }
 
 #chatMessages a:hover {
-    color: darkblue; /* Color más oscuro al pasar el cursor */
+    color: darkblue;
 }

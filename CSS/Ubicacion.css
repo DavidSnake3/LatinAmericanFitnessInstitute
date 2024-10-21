@@ -1,12 +1,13 @@
 #ubicacion {
-  background-image: url(/img/MaxFoto.jpg); /* Cambia la ruta por la de tu imagen */
-  background-size: cover; /* La imagen cubrirá todo el contenedor */
-  background-position: center; /* La imagen estará centrada */
-  background-attachment: fixed; /* El fondo se moverá al hacer scroll */
+  background-image: url(/img/MaxFoto.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: relative;
-  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+  min-height: 100vh;
   z-index: 1;
   overflow: hidden;
+  padding: 4rem 0;
 }
 
 #ubicacion::before {
@@ -16,8 +17,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Filtro oscuro para mejorar la legibilidad del texto */
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: -1;
 }
 
 .container {
@@ -31,18 +32,82 @@
   padding: 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
+  height: 100%;
 }
 
 .location-info:hover, .map-container:hover {
   transform: translateY(-5px);
 }
 
-.map-container iframe {
+.map-container {
+  width: 100%;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; 
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
   border-radius: 10px;
 }
-.logo-container {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 100vh; /* O lo que necesites para centrar verticalmente */
+
+.logo-glow {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+.neon-icon {
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+}
+
+.neon-text {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+}
+
+
+@media (max-width: 768px) {
+  #ubicacion {
+    padding: 2rem 0;
+  }
+
+  .location-info, .map-container {
+    padding: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .map-responsive {
+    padding-bottom: 75%;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .logo-glow {
+    max-width: 100px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .location-info ul li, .location-info p {
+    font-size: 0.9rem;
+  }
 }

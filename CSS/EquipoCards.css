@@ -4,7 +4,6 @@
     transition: filter 0.5s ease;
 }
 
-/* Contenedor de la tarjeta expandida */
 .expanded-card {
     position: fixed;
     top: 50%;
@@ -27,7 +26,6 @@
     opacity: 1;
 }
 
-/* Imagen grande centrada */
 .expanded-card img {
     width: 100%;
     height: auto;
@@ -36,13 +34,12 @@
     
 }
 
-/* Contenido centrado debajo de la imagen */
 .expanded-card .contenido {
     padding: 20px;
     text-align: center;
     color: var(--light-color);
-    overflow-y: auto; /* Agrega scroll si la descripción es muy larga */
-    max-height: 300px; /* Limitar la altura para que no se extienda demasiado */
+    overflow-y: auto; 
+    max-height: 300px; 
 }
 
 .expanded-card h3 {
@@ -53,10 +50,10 @@
 }
 
 .expanded-card p {
-    font-size: 1rem; /* Tamaño de texto */
-    margin-bottom: 35px; /* Espaciado entre párrafos */
-    line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
-    text-align: justify; /* Justificar el texto */
+    font-size: 1rem;
+    margin-bottom: 35px; 
+    line-height: 1.6; 
+    text-align: justify; 
 }
 
 /* Botón de cierre */

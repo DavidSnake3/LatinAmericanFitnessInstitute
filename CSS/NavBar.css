@@ -12,19 +12,19 @@
 
 .social-icons {
     display: flex;
-    gap: 25px; /* Increased from 20px */
+    gap: 25px; 
     margin-left: 1.5rem;
 }
 
 .social-icon {
     color: var(--primary-color);
-    font-size: 2.2rem; /* Increased from 1.8rem */
+    font-size: 2.2rem; 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
     color: var(--secondary-color);
-    transform: scale(1.15); /* Increased from 1.1 */
+    transform: scale(1.15); 
 }
 
 .navbar-collapse {
@@ -52,19 +52,18 @@
 }
 
 .navbar-brand {
-    font-size: 1.5rem; /* Added this line */
+    font-size: 1.5rem; 
 }
 
 .nav-link {
     font-size: 1.2rem;
-    padding: 0.5rem 1.5rem; /* Increased horizontal padding */
+    padding: 0.5rem 1.5rem; 
 }
 
 .nav-item {
-    margin-right: 1.5rem; /* Increased margin */
-}
+    margin-right: 1.5rem; 
 
 .navbar-brand:hover, .nav-link:hover {
     color: var(--secondary-color) !important;
-    transform: scale(1.15); /* Increased from 1.1 */
+    transform: scale(1.15); 
 }

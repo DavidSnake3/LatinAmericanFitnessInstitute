@@ -1,11 +1,11 @@
 /* Estilo de la sección de contacto */
 .contactollamativo {
     position: relative;
-    min-height: 60vh; /* Altura mínima de la sección */
+    min-height: 60vh; 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/fondo-contacto.jpg'); /* Ruta de la imagen de fondo */
+    background-image: url('../img/fondo-contacto.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,8 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Capa oscura */
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.6); 
 }
 
 .contactos-content {
@@ -37,7 +36,7 @@
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: var(--primary-color); /* Usando la variable del color principal */
+    color: var(--primary-color); 
 }
 
 .contactos-content p {
@@ -64,10 +63,10 @@
 }
 
 .btn-contactos:hover {
-    background-color: var(--secondary-color); /* Cambia a color secundario en hover */
+    background-color: var(--secondary-color); 
     transform: translateY(-5px);
 }
 
 .btn-contactos:hover i {
-    margin-left: 15px; /* Desplaza el ícono hacia la derecha en hover */
+    margin-left: 15px; 
 }

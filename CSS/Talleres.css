@@ -3,7 +3,7 @@
 }
 
 #Talleres .card {
-    background-color: rgba(26, 19, 50, 0.8); /* Dark background for better contrast */
+    background-color: rgba(26, 19, 50, 0.8); 
 }
 
 #Talleres .card-title{
@@ -16,6 +16,6 @@
 }
 
 #Talleres .fas {
-    color: var(--primary-color); /* Keeping the icon color as it was */
+    color: var(--primary-color); 
 }
 

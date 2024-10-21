@@ -81,7 +81,6 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
-/* Estilos para las tarjetas de información */
 .info-card {
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid var(--secondary-color);
@@ -115,14 +114,14 @@
 
 .image-section {
     position: relative;
-    margin-top: 40px; /* Espacio superior */
+    margin-top: 40px; 
 }
 
 .image-section img.small-image {
-    width: 100%; /* Ajusta el tamaño de la imagen al 50% del contenedor */
-    max-width: 100%; /* Establece un ancho máximo si lo deseas */
-    border-radius: 10px; /* Bordes redondeados */
-    filter: blur(2px); /* Efecto de desenfoque */
+    width: 100%;
+    max-width: 100%; 
+    border-radius: 10px; 
+    filter: blur(2px); 
 }
 
 .overlay {
@@ -131,18 +130,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Degradado que se desvanece hacia abajo */
-    border-radius: 10px; /* Asegura que el degradado tenga los mismos bordes redondeados */
-    z-index: 1; /* Debe estar encima de la imagen, pero detrás del contenido */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); 
+    border-radius: 10px; 
+    z-index: 1; 
 }
 
 .btn-contact {
-    position: absolute; /* Hace que el botón esté en relación a .image-section */
-    top: 50%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta la posición para centrar */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     display: inline-block;
-    margin-top: 20px; /* Espacio entre la imagen y el botón */
+    margin-top: 20px;
     padding: 12px 30px;
     font-size: 1.2rem;
     color: #ffffff;
@@ -152,10 +151,10 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
     font-weight: bold;
-    z-index: 2; /* Asegura que el botón esté por encima de todo */
+    z-index: 2; 
 }
 
 .btn-contact:hover {
-    background-color: var(--secondary-color); /* Cambia a color secundario en hover */
+    background-color: var(--secondary-color); 
     transform: translateY(-5px);
 }

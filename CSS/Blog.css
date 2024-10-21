@@ -56,26 +56,21 @@
     color: var(--dark-color);
 }
 
-/* Add these rules to your existing CSS file */
-
-/* Target only the blog section */
 #Blog .card-text {
     color: rgb(255, 255, 255);
 }
 #Blog .card-title{
 color: #615f5f;
-    
 }
 
 #Blog .card-footer .text-muted {
-    color: #d0d0d0 !important; /* Light grey color for better visibility */
+    color: #d0d0d0 !important; 
 }
 
 #Blog .feature-card.blog-card {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
-/* If you need to target specific elements more precisely, you can use the data-category attribute */
 #Blog .blog-item[data-category] .card-text {
     color: white;
 }
