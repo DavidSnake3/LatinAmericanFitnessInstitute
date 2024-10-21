@@ -68,11 +68,6 @@
   text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
 }
 
-.neon-text {
-  color: #ffffff;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
-}
-
 @media (max-width: 768px) {
   #ubicacion {
     padding: 2rem 0;
