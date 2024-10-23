@@ -1,123 +1,121 @@
-
-
-
-    /* -- Linea de tiempo -- */
-    @media screen and (max-width: 767px) {
-        .timeline {
-            padding: 0;
-        }
-
-        .timeline::after {
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-        }
-        
-        .timeline-progress {
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            z-index: -1;
-        }
-        
-        .timeline-item {
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 0;
-        }
-        
-        .timeline-item::after {
-            top: 0;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        .content, .image-container {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px 0;
-            position: relative;
-        }
-        
-        .left, .right {
-            text-align: center;
-        }
-        
-        .image-container {
-            order: -1;
-        }
-        
-        .info-card {
-            margin-bottom: 1rem;
-        }
-
-        .step-number {
-            text-align: center;
-        }
-
-        .module-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .timeline-item:nth-child(odd) .image-container::before,
-        .timeline-item:nth-child(even) .image-container::before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background-color: #6c3ce9;
-            border: 4px solid #6c3ce9;
-            top: 0;
-            left: 50%;
-            border-radius: 50%;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-        }
-
-        .timeline-item::after {
-            display: none;
-        }
+/* -- Linea de tiempo -- */
+@media screen and (max-width: 767px) {
+    .timeline {
+        padding: 0;
     }
 
-     /* -- Blog -- */
-    @media (max-width: 767.98px) {
-        .dropdown-toggle {
-            width: 100%;
-        }
+    .timeline::after {
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
     }
 
-     /*-- Chat bot-- */
-    @media (max-width: 576px) {
-        .chatbot-container {
-            width: calc(100% - 40px);
-            height: 50vh;
-            bottom: 76px;
-            right: 20px;
-            left: 20px;
-        }
+    .timeline-progress {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        z-index: -1;
+    }
 
-        .chatbot-toggle {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            bottom: 20px; 
-        }
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+
+    .timeline-item::after {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .content,
+    .image-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .left,
+    .right {
+        text-align: center;
+    }
+
+    .image-container {
+        order: -1;
+    }
+
+    .info-card {
+        margin-bottom: 1rem;
+    }
+
+    .step-number {
+        text-align: center;
+    }
+
+    .module-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .timeline-item:nth-child(odd) .image-container::before,
+    .timeline-item:nth-child(even) .image-container::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: #6c3ce9;
+        border: 4px solid #6c3ce9;
+        top: 0;
+        left: 50%;
+        border-radius: 50%;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    .timeline-item::after {
+        display: none;
+    }
 }
-    /*-- Sobre nosotros -- */
-    @media (max-width: 767px) {
-        #SobreNosotros .container {
-            text-align: center;
-        }
-    
-        #SobreNosotros p {
-            text-align: justify;
-            font-size: 1rem;
-        }
-    
-        #SobreNosotros img {
-            margin-top: 2rem;
-        }
+
+/* -- Blog -- */
+@media (max-width: 767.98px) {
+    .dropdown-toggle {
+        width: 100%;
+    }
+}
+
+/*-- Chat bot-- */
+@media (max-width: 576px) {
+    .chatbot-container {
+        width: calc(100% - 40px);
+        height: 50vh;
+        bottom: 76px;
+        right: 20px;
+        left: 20px;
     }
 
- 
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        bottom: 20px;
+    }
+}
+
+/*-- Sobre nosotros -- */
+@media (max-width: 767px) {
+    #SobreNosotros .container {
+        text-align: center;
+    }
+
+    #SobreNosotros p {
+        text-align: justify;
+        font-size: 1rem;
+    }
+
+    #SobreNosotros img {
+        margin-top: 2rem;
+    }
+}

@@ -59,16 +59,17 @@
 #Blog .card-text {
     color: rgb(255, 255, 255);
 }
-#Blog .card-title{
-color: #615f5f;
+
+#Blog .card-title {
+    color: #615f5f;
 }
 
 #Blog .card-footer .text-muted {
-    color: #d0d0d0 !important; 
+    color: #d0d0d0 !important;
 }
 
 #Blog .feature-card.blog-card {
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #Blog .blog-item[data-category] .card-text {

@@ -1,11 +1,11 @@
 /* Estilo de la sección de contacto */
 .contactollamativo {
     position: relative;
-    min-height: 60vh; 
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/fondo-contacto.jpg'); 
+    background-image: url('../img/fondo-contacto.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,7 +20,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .contactos-content {
@@ -36,7 +36,7 @@
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }
 
 .contactos-content p {
@@ -63,10 +63,10 @@
 }
 
 .btn-contactos:hover {
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
     transform: translateY(-5px);
 }
 
 .btn-contactos:hover i {
-    margin-left: 15px; 
+    margin-left: 15px;
 }

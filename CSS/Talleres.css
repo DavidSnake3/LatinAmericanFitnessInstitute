@@ -3,12 +3,12 @@
 }
 
 #Talleres .card {
-    background-color: rgba(26, 19, 50, 0.8); 
+    background-color: rgba(26, 19, 50, 0.8);
 }
 
-#Talleres .card-title{
+#Talleres .card-title {
 
-    color:#ffffff7a ;
+    color: #ffffff7a;
 }
 
 #Talleres .card-text {
@@ -16,5 +16,5 @@
 }
 
 #Talleres .fas {
-    color: var(--primary-color); 
+    color: var(--primary-color);
 }

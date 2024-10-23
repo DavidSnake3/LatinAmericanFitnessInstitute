@@ -1,4 +1,4 @@
- // Typing effect
+
  const phrases = [
     "Construye tu futuro fitness",
     "Desbloquea tu potencial tecnológico",
@@ -33,7 +33,7 @@ function eraseText() {
 typeText();
 
 
-// Smooth scrolling for anchor links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -43,7 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Initialize Bootstrap Carousel
+
 var heroCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
     interval: 3000,
     pause: false

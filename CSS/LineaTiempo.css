@@ -5,6 +5,7 @@
     margin: 0 auto;
     z-index: 1;
 }
+
 .timeline::after {
     content: '';
     position: absolute;
@@ -15,6 +16,7 @@
     left: 50%;
     margin-left: -1px;
 }
+
 .timeline-progress {
     position: absolute;
     width: 6px;
@@ -27,6 +29,7 @@
     transform-origin: top;
     transition: transform 0.3s ease-out;
 }
+
 .timeline-item {
     padding: 40px 0;
     position: relative;
@@ -39,10 +42,12 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
 .timeline-item::after {
     content: '';
     position: absolute;
@@ -56,31 +61,39 @@
     z-index: 1;
     transform: translate(-50%, -50%);
 }
-.content, .image-container {
+
+.content,
+.image-container {
     width: 45%;
 }
+
 .content {
     padding: 20px 30px;
     background-color: #1a1332;
     border-radius: 6px;
 }
+
 .left {
     text-align: right;
 }
+
 .right {
     text-align: left;
 }
+
 .module-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(108, 60, 233, 0.5);
 }
+
 .step-number {
     color: #0100fd;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .info-card {
     background-color: rgba(0, 0, 0, 0.637);
     border: 1px solid var(--primary-color);
@@ -89,23 +102,28 @@
     margin-bottom: 2rem;
     transition: all 0.3s ease;
 }
+
 .info-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px var(--primary-color);
 }
+
 .info-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     text-align: center;
 }
+
 .info-card ul {
     list-style-type: none;
     padding-left: 0;
 }
+
 .info-card li {
     margin-bottom: 0.5rem;
     text-align: center;
 }
+
 .info-card i {
     color: var(--primary-color);
     margin-right: 0.5rem;
@@ -113,19 +131,24 @@
 
 .image-section {
     position: relative;
-    margin-top: 40px; 
-    overflow: hidden; /* Asegúrate de que no se desborde */
+    margin-top: 40px;
+    overflow: hidden;
+    /* Asegúrate de que no se desborde */
 }
 
 .image-section img.small-image {
     width: 100%;
     height: auto;
-    max-width: none; /* Asegúrate de que la imagen use todo el ancho */
-    filter: blur(5px); /* Ajusta la cantidad de blur según tu preferencia */
-    position: absolute; /* Para que esté detrás del contenido */
+    max-width: none;
+    /* Asegúrate de que la imagen use todo el ancho */
+    filter: blur(5px);
+    /* Ajusta la cantidad de blur según tu preferencia */
+    position: absolute;
+    /* Para que esté detrás del contenido */
     top: 0;
     left: 0;
-    z-index: 0; /* Detrás de otros elementos */
+    z-index: 0;
+    /* Detrás de otros elementos */
 }
 
 .overlay {
@@ -134,7 +157,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); 
-    border-radius: 10px; 
-    z-index: 1; /* Encima de la imagen */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    border-radius: 10px;
+    z-index: 1;
+    /* Encima de la imagen */
 }

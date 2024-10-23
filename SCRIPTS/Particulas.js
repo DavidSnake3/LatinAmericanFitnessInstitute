@@ -8,11 +8,11 @@ particlesJS('particles-js', {
         line_linked: { enable: false },
         move: {
     enable: true,
-    speed: 2, // Aumenta la velocidad para que suban más rápido
-    direction: "top", // Movimiento hacia arriba
+    speed: 2, 
+    direction: "top", 
     random: false,
     straight: false,
-    out_mode: "bounce", // Rebote para subir y bajar
+    out_mode: "bounce", 
     bounce: true
     }
 },

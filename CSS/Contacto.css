@@ -3,193 +3,202 @@
     border-color: var(--primary-color);
     color: var(--light-color);
     transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 213, 35, 0.25);
+    color: var(--light-color);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    overflow-x: hidden;
+}
+
+.parallax-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.603);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.1);
+}
+
+.neon-text {
+    text-shadow: 0 0 5px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 15px var(--primary-color),
+        0 0 20px var(--primary-color);
+}
+
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(0, 255, 255, 0.5);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    color: var(--light-color);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 213, 35, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--light-color);
+    transform: scale(1.05);
+}
+
+.form-floating label {
+    color: var(--light-color);
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--primary-color);
+}
+
+
+
+.social-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.animated {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.animated.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--primary-color);
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
     }
 
-    .form-control:focus {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 0 0.2rem rgba(255, 213, 35, 0.25);
-        color: var(--light-color);
+    100% {
+        transform: rotate(360deg);
     }
+}
 
-    .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    body, html {
-        height: 100%;
-        font-family: 'Orbitron', sans-serif;
-        background-color: var(--dark-color);
-        color: var(--light-color);
-        overflow-x: hidden;
-    }
-
-    .parallax-section {
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .parallax-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    .overlay {
-        background-color: rgba(0, 0, 0, 0.603);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .content {
-        position: relative;
-        z-index: 1;
-        margin-top: 100px;
-    }
-    .navbar {
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-    }
-
-    .navbar-brand, .nav-link {
-        color: var(--primary-color) !important;
-        transition: all 0.3s ease;
-    }
-
-    .navbar-brand:hover, .nav-link:hover {
-        color: var(--secondary-color) !important;
-        transform: scale(1.1);
-    }
-
-    .neon-text {
-        text-shadow: 0 0 5px var(--primary-color),
-                     0 0 10px var(--primary-color),
-                     0 0 15px var(--primary-color),
-                     0 0 20px var(--primary-color);
-    }
-
-    .contact-form {
-        background-color: rgba(0, 0, 0, 0.8);
-        border: 1px solid var(--primary-color);
-        border-radius: 15px;
-        padding: 1rem;
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        transition: all 0.3s ease;
-        
-    }
-
-    .contact-form:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 30px rgba(0, 255, 255, 0.5);
-    }
-
-    .form-control {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-color: var(--primary-color);
-        color: var(--light-color);
-        transition: all 0.3s ease;
-    }
-
-    .form-control:focus {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 0 0.2rem rgba(255, 213, 35, 0.25);
-    }
-
-    .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: var(--dark-color);
-        transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        background-color: var(--secondary-color);
-        border-color: var(--secondary-color);
-        color: var(--light-color);
-        transform: scale(1.05);
-    }
-
-    .form-floating label {
-        color: var(--light-color);
-    }
-
-    .form-floating > .form-control:focus ~ label,
-    .form-floating > .form-control:not(:placeholder-shown) ~ label {
-        color: var(--primary-color);
-    }
-
-    
-
-    .social-icon {
-        font-size: 4rem;
-        color: var(--primary-color);
-        transition: all 0.3s ease;
-    }
-
-    .social-icon:hover {
-        color: var(--secondary-color);
-        transform: scale(1.2);
-    }
-
-    .animated {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s ease;
-    }
-
-    .animated.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--dark-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid var(--primary-color);
-        border-top: 3px solid var(--secondary-color);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    .image-section {
+.image-section {
     position: relative;
     margin-top: 40px;
 }
 
 .image-section img {
-    width: 100%; 
-    border-radius: 10px; 
+    width: 100%;
+    border-radius: 10px;
 }
 
 .overlay {
@@ -198,15 +207,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
-    border-radius: 10px; 
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 .btn-contact {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
     display: inline-block;
-    margin-top: 20px; 
+    margin-top: 20px;
     padding: 12px 30px;
     font-size: 1.2rem;
     color: #ffffff;
@@ -224,10 +233,10 @@
 }
 
 .btn-contact:hover {
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
     transform: translateY(-5px);
 }
 
 .btn-contact:hover i {
-    margin-left: 15px; 
+    margin-left: 15px;
 }

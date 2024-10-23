@@ -26,7 +26,8 @@
   z-index: 1;
 }
 
-.location-info, .map-container {
+.location-info,
+.map-container {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   padding: 20px;
@@ -35,7 +36,8 @@
   height: 100%;
 }
 
-.location-info:hover, .map-container:hover {
+.location-info:hover,
+.map-container:hover {
   transform: translateY(-5px);
 }
 
@@ -45,7 +47,7 @@
 
 .map-responsive {
   position: relative;
-  padding-bottom: 75%; /* Ajustado para una mejor relación de aspecto en móviles */
+  padding-bottom: 75%;
   height: 0;
   overflow: hidden;
 }
@@ -73,13 +75,14 @@
     padding: 2rem 0;
   }
 
-  .location-info, .map-container {
+  .location-info,
+  .map-container {
     padding: 15px;
     margin-bottom: 1rem;
   }
 
   .map-responsive {
-    padding-bottom: 75%; /* Mantiene la relación de aspecto en móviles */
+    padding-bottom: 75%;
   }
 
   h2 {
@@ -101,7 +104,8 @@
     font-size: 1.5rem;
   }
 
-  .location-info ul li, .location-info p {
+  .location-info ul li,
+  .location-info p {
     font-size: 0.9rem;
   }
 }

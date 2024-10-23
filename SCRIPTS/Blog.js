@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterBtns = document.querySelectorAll('[data-filter]');
     const blogItems = document.querySelectorAll('.blog-item');
 
-    // Función para mostrar las tarjetas con animación
     function showCards() {
         blogItems.forEach((item, index) => {
             setTimeout(() => {
@@ -13,10 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mostrar las tarjetas iniciales
     showCards();
 
-    // Filtrado de artículos
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const filter = btn.getAttribute('data-filter');
@@ -33,20 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Reiniciar animaciones
             blogItems.forEach(item => item.querySelector('.blog-card').classList.remove('show'));
             setTimeout(showCards, 100);
         });
     });
 
-    // Simulación de carga de más artículos
     loadMoreBtn.addEventListener('click', () => {
         loadMoreBtn.disabled = true;
         loadMoreBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Cargando...';
 
         setTimeout(() => {
-            // Aquí normalmente cargarías más artículos del servidor
-            // Por ahora, solo simularemos la carga
+
             const newArticles = [
                 {title: "Yoga para deportistas", category: "fitness", date: "15 de marzo, 2023"},
                 {title: "Dietas cetogénicas y rendimiento", category: "nutricion", date: "5 de marzo, 2023"},

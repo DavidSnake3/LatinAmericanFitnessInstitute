@@ -1,4 +1,4 @@
-// Elementos necesarios
+
 const teamMembers = {
     "Lic. Max Acuña": {
         role: "CEO y director academico",
@@ -21,34 +21,34 @@ const teamMembers = {
         desc: "Mi nombre es Alberto Castro, estoy sumamente comprometido con ayudar y demostrar altos conocimientos en el area fitnes...."
     }
 };
-// Al hacer clic en un miembro del equipo
+
 document.querySelectorAll('.team-member').forEach(member => {
     member.addEventListener('click', () => {
-        // Aplicar blur al contenido de la página
+  
         pageContent.classList.add('blur-background');
 
-        // Obtener el nombre del miembro
+
         const name = member.querySelector('.card-title').textContent;
 
-        // Obtener la información del miembro del objeto
+ 
         const { role, desc } = teamMembers[name];
         const imgSrc = member.querySelector('img').src;
 
-        // Rellenar la tarjeta expandida con la información
+      
         expandedImg.src = imgSrc;
         expandedName.textContent = name;
         expandedRole.textContent = role;
         expandedDesc.textContent = desc;
 
-        // Mostrar la tarjeta expandida con animación
+      
         expandedCard.classList.add('active');
     });
 });
 
-// Cerrar tarjeta expandida al hacer clic en el botón de cierre
+
 const closeCard = document.querySelector('.close-card');
 closeCard.addEventListener('click', () => {
-    // Ocultar la tarjeta expandida
-    expandedCard.classList.remove('active'); // Desactivar el modal
-    pageContent.classList.remove('blur-background'); // Quitar el blur
+
+    expandedCard.classList.remove('active'); 
+    pageContent.classList.remove('blur-background'); 
 });

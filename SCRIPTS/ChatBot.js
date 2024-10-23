@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Mensaje de bienvenida
     setTimeout(() => {
         addMessage("¡Hola! Soy el asistente virtual de LAFIT. ¿En qué puedo ayudarte hoy?");
     }, 1000);

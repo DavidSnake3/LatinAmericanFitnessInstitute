@@ -1,4 +1,4 @@
- // Timeline animation
+
  function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
@@ -17,9 +17,9 @@ function handleScroll() {
     const timelineTop = timeline.offsetTop;
     const timelineHeight = timeline.offsetHeight;
     
-    // Calculate progress based on scroll position
+   
     let progress = (scrollPosition - timelineTop + window.innerHeight) / (timelineHeight + window.innerHeight);
-    progress = Math.min(Math.max(progress, 0), 1); // Clamp between 0 and 1
+    progress = Math.min(Math.max(progress, 0), 1);
     
     timelineProgress.style.transform = `scaleY(${progress})`;
     timelineProgress.style.background = `linear-gradient(to bottom, #6c3ce9 ${progress * 150}%, #1a1332 ${progress * 150}%)`;
