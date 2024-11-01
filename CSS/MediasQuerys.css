@@ -88,6 +88,7 @@
 
 /*-- Chat bot-- */
 @media (max-width: 576px) {
+    /* Chatbot */
     .chatbot-container {
         width: calc(100% - 40px);
         height: 50vh;
@@ -97,12 +98,24 @@
     }
 
     .chatbot-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-        bottom: 20px;
+        width: 50px !important; /* Tamaño aumentado */
+        height: 50px !important;
+        font-size: 1.3rem !important;
+        bottom: 20px !important;
+    }
+
+    /* Carrito */
+    .cart-toggle {
+        width: 50px !important; /* Tamaño aumentado */
+        height: 50px !important;
+        font-size: 1.rem !important;
+        bottom: 79px !important; /* Posición relativa al chatbot */
+        right: 20px !important;
     }
 }
+
+
+
 
 /*-- Sobre nosotros -- */
 @media (max-width: 767px) {

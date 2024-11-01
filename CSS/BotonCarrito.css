@@ -1,0 +1,14 @@
+.cart-toggle {
+    position: fixed;
+    bottom: 100px; /* Ajusta este valor para posicionar el botón arriba del chatbot */
+    right: 20px;
+    z-index: 999; /* Asegura que el botón esté en una capa correcta */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}

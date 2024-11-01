@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="CSS/ContactoLLamativo">
     <link rel="stylesheet" href="CSS/Pie de pagina.css">
     <link rel="stylesheet" href="CSS/Ubicacion.css">
+    <link rel="stylesheet" href="CSS/PaquetesPromociones.css">
+    <link rel="stylesheet" href="CSS/BotonCarrito.css">
 </head>
 
 <body>
@@ -62,6 +64,11 @@
         <!-- ChatBot abrir -->
         <button id="openChatbot" class="btn btn-primary chatbot-toggle" aria-label="Abrir chatbot">
             <i class="fas fa-comments"></i>
+        </button>
+
+        <!-- Carrito de compras -->
+        <button id="openCart" class="btn btn-primary cart-toggle" aria-label="Abrir carrito">
+            <i class="fas fa-shopping-cart"></i>
         </button>
 
         <!-- Navbar -->
@@ -263,6 +270,38 @@
                 </div>
             </div>
         </section>
+
+        <!-- Paquetes promocion -->
+        <section id="paquetes" class="pricing-section">
+            <div class="container">
+                <h2 class="section-title neon-text text-center">Paquetes de Promociones</h2>
+                <div class="pricing-container" id="pricingContainer">
+                  
+                </div>
+            </div>
+        </section>
+        <!-- Plantilla Servicios-->
+        <template id="package-template">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="package-name"></h3>
+                    <div class="price-container">
+                        <span class="price"></span>
+                        <span class="period"></span>
+                    </div>
+                    <p class="description"></p>
+                </div>
+                <div class="features-container">
+                    <div class="features-scroll">
+                        <ul class="features-list">
+                           
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg w-100">Seleccionar Plan</button>
+            </div>
+        </template>
+
 
         <!-- Sobre nosotros -->
         <section id="SobreNosotros" class="py-5">
@@ -679,6 +718,7 @@
     <script src="SCRIPTS/ChatBot.js"></script>
     <script src="SCRIPTS/NavBar.js"></script>
     <script src="SCRIPTS/PreguntasFrecuentes.js"></script>
+    <script src="SCRIPTS/PaquetesPromociones.js"></script>
 
 </body>
 

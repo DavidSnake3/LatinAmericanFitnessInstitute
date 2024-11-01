@@ -1,0 +1,52 @@
+{
+    "packages": [
+      {
+        "name": "Básico",
+        "price": "₡50.000",
+        "period": "por mes",
+        "description": "Para principiantes que buscan iniciar su viaje fitness",
+        "features": [
+          "Acceso al curso de acondicionamiento fisico",
+          "Evaluación física inicial",
+          "Plan de entrenamiento básico",
+          "Seguimiento mensual",
+          "Acceso al gimnasio en horario regular",
+          "1 clase grupal por semana",
+          "Acceso a la app móvil"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "₡75.000",
+        "period": "por mes",
+        "description": "Para entusiastas del fitness que buscan resultados serios",
+        "features": [
+          "Todo lo del plan Básico",
+          "Acceso ilimitado a libros fitness",
+          "Talleres gratis",
+          "Plan de entrenamiento personalizado",
+          "Seguimiento quincenal",
+          "Acceso 24/7 al gimnasio",
+          "Programa nutricional avanzado",
+          "Análisis de composición corporal mensual"
+        ]
+      },
+      {
+        "name": "Elite",
+        "price": "₡100.000",
+        "period": "por mes",
+        "description": "Para aquellos que buscan la máxima transformación",
+        "features": [
+          "Todo lo del plan Premium",
+          "Contenido de libros de todo tipo fitnes",
+          "Plan de entrenamiento elite",
+          "Seguimiento semanal",
+          "Acceso VIP a instalaciones",
+          "Programa nutricional personalizado",
+          "Análisis biomecánico",
+          "Terapia física preventiva",
+          "Acceso prioritario a eventos especiales"
+        ]
+      }
+    ]
+  }
