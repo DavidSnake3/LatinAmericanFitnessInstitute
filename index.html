@@ -69,8 +69,8 @@
         <!-- Carrito de compras -->
         <button id="openCart" class="btn btn-primary cart-toggle" aria-label="Abrir carrito">
             <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
         </button>
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
@@ -271,15 +271,23 @@
             </div>
         </section>
 
+        <div id="addToCartModal">
+            <div class="modal-content animate__animated animate__fadeIn">
+                <span class="close">&times;</span>
+                <p id="modalMessage"></p>
+            </div>
+        </div>
+
         <!-- Paquetes promocion -->
         <section id="paquetes" class="pricing-section">
             <div class="container">
                 <h2 class="section-title neon-text text-center">Paquetes de Promociones</h2>
                 <div class="pricing-container" id="pricingContainer">
-                  
+                    <!-- Packages will be dynamically loaded here -->
                 </div>
             </div>
         </section>
+        
         <!-- Plantilla Servicios-->
         <template id="package-template">
             <div class="pricing-card">
@@ -298,7 +306,7 @@
                         </ul>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-lg w-100">Seleccionar Plan</button>
+                <button class="btn btn-primary btn-lg w-100 select-package" data-package-name="">Seleccionar Plan</button>
             </div>
         </template>
 
@@ -708,7 +716,8 @@
     <!-- Scripts modulos especificos -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <!-- Scripts modulos especificos -->
     <script src="SCRIPTS/Particulas.js"></script>
     <script src="SCRIPTS/Equipo.js"></script>
@@ -719,6 +728,72 @@
     <script src="SCRIPTS/NavBar.js"></script>
     <script src="SCRIPTS/PreguntasFrecuentes.js"></script>
     <script src="SCRIPTS/PaquetesPromociones.js"></script>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartButton = document.getElementById('openCart');
+            const cartBadge = document.getElementById('cartBadge');
+            const modal = document.getElementById('addToCartModal');
+            const modalContent = modal.querySelector('.modal-content');
+            const modalMessage = document.getElementById('modalMessage');
+            const closeBtn = modal.querySelector('.close');
+            let cart = JSON.parse(localStorage.getItem('cart')) || { items: [] };
+
+            function updateCartBadge() {
+                cartBadge.textContent = cart.items.length;
+            }
+
+            function showModal(message) {
+                modalMessage.textContent = message;
+                modal.style.display = 'block';
+                modalContent.classList.remove('animate__fadeOut');
+                modalContent.classList.add('animate__fadeIn');
+                setTimeout(() => {
+                    modalContent.classList.remove('animate__fadeIn');
+                    modalContent.classList.add('animate__fadeOut');
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 1000);
+                }, 2000);
+            }
+
+            function addToCart(package) {
+                cart.items.push(package);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartBadge();
+                showModal(`Se ha agregado el paquete ${package.name} al carrito`);
+            }
+
+            cartButton.addEventListener('click', function() {
+                window.location.href = 'carrito.html';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            document.getElementById('pricingContainer').addEventListener('click', function(e) {
+                if (e.target.classList.contains('select-package')) {
+                    const packageName = e.target.dataset.packageName;
+                    const package = {
+                        name: packageName,
+                        price: e.target.closest('.pricing-card').querySelector('.price').textContent,
+                        type: 'package'
+                    };
+                    addToCart(package);
+                }
+            });
+
+            updateCartBadge();
+        });
+    </script>
 
 </body>
 

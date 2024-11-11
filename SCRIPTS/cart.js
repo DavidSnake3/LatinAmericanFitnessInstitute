@@ -1,3 +1,5 @@
+// cart.js
+
 document.addEventListener('DOMContentLoaded', function() {
     let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], type: null };
     const featureList = document.getElementById('featureList');
@@ -9,32 +11,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkoutBtn = document.getElementById('checkoutBtn');
     const featureCategoriesNav = document.querySelector('#featureCategoriesNav .navbar-nav');
 
-    // Load features
-    fetch('JSON/preciosUnitarios.json')
-        .then(response => response.json())
-        .then(data => {
-            // Populate feature categories navbar
-            data.categories.forEach((category, index) => {
-                const li = document.createElement('li');
-                li.className = 'nav-item';
-                li.innerHTML = `<a class="nav-link ${index === 0 ? 'active' : ''}" href="#" data-category="${category.name}">${category.name}</a>`;
-                featureCategoriesNav.appendChild(li);
-            });
-
-            // Add event listeners to category links
-            document.querySelectorAll('#featureCategoriesNav .nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelectorAll('#featureCategoriesNav .nav-link').forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    displayFeatures(this.dataset.category, data.categories);
-                });
-            });
-
-            // Display first category features by default
-            
-            displayFeatures(data.categories[0].name, data.categories);
+    // Load features and packages
+    Promise.all([
+        fetch('JSON/preciosUnitarios.json').then(response => response.json()),
+        fetch('JSON/PaquetesPromociones.json').then(response => response.json())
+    ]).then(([featuresData, packagesData]) => {
+        // Populate feature categories navbar
+        featuresData.categories.forEach((category, index) => {
+            const li = document.createElement('li');
+            li.className = 'nav-item';
+            li.innerHTML = `<a class="nav-link ${index === 0 ? 'active' : ''}" href="#" data-category="${category.name}">${category.name}</a>`;
+            featureCategoriesNav.appendChild(li);
         });
+
+        // Add event listeners to category links
+        document.querySelectorAll('#featureCategoriesNav .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('#featureCategoriesNav .nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                displayFeatures(this.dataset.category, featuresData.categories);
+            });
+        });
+
+        // Display first category features by default
+        displayFeatures(featuresData.categories[0].name, featuresData.categories);
+
+        // Display packages
+        displayPackages(packagesData.packages);
+    });
 
     function displayFeatures(categoryName, categories) {
         const category = categories.find(c => c.name === categoryName);
@@ -61,10 +66,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function displayPackages(packages) {
+        const packagesContainer = document.createElement('div');
+        packagesContainer.className = 'row row-cols-1 row-cols-md-3 g-4 mb-4';
+        packages.forEach(package => {
+            const packageItem = document.createElement('div');
+            packageItem.className = 'col';
+            packageItem.innerHTML = `
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${package.name}</h5>
+                        <p class="card-text">${package.description}</p>
+                        <p class="text-primary">Precio: ${package.price}</p>
+                        <button class="btn btn-primary add-package" data-name="${package.name}" data-price="${package.price.replace('₡', '').replace('.', '')}">Seleccionar paquete</button>
+                    </div>
+                </div>
+            `;
+            packagesContainer.appendChild(packageItem);
+        });
+        featureList.parentNode.insertBefore(packagesContainer, featureList);
+
+        // Add event listeners to package buttons
+        document.querySelectorAll('.add-package').forEach(button => {
+            button.addEventListener('click', addPackage);
+        });
+    }
+
     function addFeature(event) {
         const feature = event.target.dataset;
-        if (cart.type === 'plan') {
-            alert('No se pueden agregar características individuales cuando ya se ha seleccionado un plan.');
+        if (cart.type === 'package') {
+            alert('No se pueden agregar características individuales cuando ya se ha seleccionado un paquete.');
             return;
         }
         cart.type = 'custom';
@@ -82,6 +113,24 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCart();
     }
 
+    function addPackage(event) {
+        const package = event.target.dataset;
+        if (cart.type === 'custom') {
+            alert('No se puede seleccionar un paquete cuando ya se han agregado características individuales.');
+            return;
+        }
+        cart = {
+            type: 'package',
+            items: [{
+                id: package.name,
+                name: package.name,
+                price: parseInt(package.price),
+                quantity: 1
+            }]
+        };
+        updateCart();
+    }
+
     function updateCart() {
         cartItems.innerHTML = '';
         let subtotal = 0;
@@ -91,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             cartItems.innerHTML += `
                 <tr>
                     <td>${item.name}</td>
-                    <td>Característica individual</td>
+                    <td>${cart.type === 'package' ? 'Paquete' : 'Característica individual'}</td>
                     <td>₡${item.price.toLocaleString()}</td>
                     <td>
                         <div class="input-group quantity-control">
@@ -136,8 +185,13 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     checkoutBtn.addEventListener('click', function() {
-        alert('Gracias por tu compra. Serás redirigido al proceso de pago.');
-        // Here you would typically redirect to a payment processing page
+        if (cart.items.length > 0) {
+            // Open payment modal
+            const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+        } else {
+            alert('El carrito está vacío. Agrega algunos productos antes de proceder al pago.');
+        }
     });
 
     // Initial cart update

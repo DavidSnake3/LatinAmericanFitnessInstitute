@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 featuresList.appendChild(li);
             });
             
+            // Set the package name as a data attribute on the select button
+            card.querySelector('.select-package').dataset.packageName = package.name;
+            
             // Add the card to the container
             container.appendChild(card);
         });
