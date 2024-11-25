@@ -47,13 +47,16 @@
 
         .nav-link:hover {
             color: var(--secondary-color) !important;
+            border-radius: 10px;
         }
 
         /* Feature Categories Navbar */
         .feature-categories {
             background-color: rgba(255, 213, 35, 0.1);
             padding: 0.5rem 0;
+            margin-bottom: 30px;
             top: 56px; /* Adjust this value based on your main navbar height */
+            border-radius: 25px;
         }
 
         .feature-categories .nav-link {
@@ -65,6 +68,7 @@
         .feature-categories .nav-link.active {
             color: var(--secondary-color) !important;
             background-color: rgba(255, 213, 35, 0.2);
+            border-radius: 10px;
         }
 
         /* Cart Styles */
@@ -79,6 +83,8 @@
             margin-bottom: 2rem;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 30px;
+            border-radius: 10px;
         }
 
         .cart-table {
@@ -249,10 +255,24 @@
             width: 3rem;
             height: 3rem;
         }
+
+        #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        }
+
+
     </style>
 </head>
 
 <body>
+    <div id="particles-js"></div>
+    
     <!-- Main Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-main">
         <div class="container">
@@ -274,8 +294,18 @@
         </div>
     </nav>
 
-    <!-- Feature Categories Navbar -->
+    
+
+    <!-- Cart Content -->
+    <div class="container cart-container">
+        <div class="cart-header">
+            <h1>RESUMEN DEL CARRITO DE COMPRAS</h1>
+            <p>Su carrito contiene: <span id="cartItemCount">0</span> productos</p>
+        </div>
+        <h2 class="text-center mb-4">Seleccione sus características</h2>
+        <!-- Feature Categories Navbar -->
     <nav class="navbar navbar-expand-lg feature-categories sticky-top">
+        
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#featureCategoriesNav">
                 <span class="navbar-toggler-icon"></span>
@@ -288,16 +318,9 @@
         </div>
     </nav>
 
-    <!-- Cart Content -->
-    <div class="container cart-container">
-        <div class="cart-header">
-            <h1>RESUMEN DEL CARRITO DE COMPRAS</h1>
-            <p>Su carrito contiene: <span id="cartItemCount">0</span> productos</p>
-        </div>
-
         <!-- Feature Selection -->
         <div class="feature-selection" id="featureSelection">
-            <h2 class="text-center mb-4">Seleccione sus características</h2>
+            
             <div id="featureList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <!-- Features will be dynamically loaded here -->
             </div>
@@ -467,6 +490,14 @@
             </div>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="SCRIPTS/Particulas.js"></script>
+
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="SCRIPTS/cart.js"></script>
