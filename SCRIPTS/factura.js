@@ -1,17 +1,14 @@
-// factura.js
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const invoice = JSON.parse(localStorage.getItem('currentInvoice'));
 
     if (invoice) {
-        // Populate invoice details
+        // Poblar datos en el HTML
         document.getElementById('customerName').textContent = invoice.customerName;
         document.getElementById('customerEmail').textContent = invoice.customerEmail;
         document.getElementById('customerCountry').textContent = invoice.customerCountry;
         document.getElementById('invoiceNumber').textContent = invoice.invoiceNumber;
         document.getElementById('invoiceDate').textContent = invoice.invoiceDate;
 
-        // Populate invoice items
         const invoiceItemsContainer = document.getElementById('invoiceItems');
         invoice.items.forEach(item => {
             const total = item.quantity * item.price;
@@ -25,59 +22,52 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         });
 
-        // Display totals
         document.getElementById('subtotal').textContent = `₡${invoice.subtotal.toLocaleString()}`;
         document.getElementById('iva').textContent = `₡${invoice.iva.toLocaleString()}`;
         document.getElementById('matricula').textContent = `₡${invoice.matricula.toLocaleString()}`;
         document.getElementById('total').textContent = `₡${invoice.total.toLocaleString()}`;
 
-        // Set up print functionality
-        document.getElementById('printInvoice').addEventListener('click', function() {
-            window.print();
-        });
+        // Descargar PDF
+        document.getElementById('downloadPDF').addEventListener('click', function () {
+            const docDefinition = {
+                content: [
+                    { text: 'Factura', style: 'header', alignment: 'center' },
+                    { text: `Cliente: ${invoice.customerName}`, style: 'subheader' },
+                    `Email: ${invoice.customerEmail}`,
+                    `País: ${invoice.customerCountry}`,
+                    `Número de Factura: ${invoice.invoiceNumber}`,
+                    `Fecha: ${invoice.invoiceDate}`,
+                    { text: '\nDetalle de Productos:', style: 'subheader' },
+                    {
+                        table: {
+                            widths: ['*', 'auto', 'auto', 'auto'],
+                            body: [
+                                ['Producto', 'Cantidad', 'Precio Unitario', 'Total'],
+                                ...invoice.items.map(item => [
+                                    item.name,
+                                    item.quantity,
+                                    `CRC ${item.price.toLocaleString()}`,
+                                    `CRC ${(item.quantity * item.price).toLocaleString()}`
+                                ]),
+                            ]
+                        }
+                    },
+                    '\n',
+                    { text: `Subtotal: CRC ${invoice.subtotal.toLocaleString()}`, alignment: 'right' },
+                    { text: `IVA (13%): CRC ${invoice.iva.toLocaleString()}`, alignment: 'right' },
+                    { text: `Matrícula: CRC ${invoice.matricula.toLocaleString()}`, alignment: 'right' },
+                    { text: `TOTAL: CRC ${invoice.total.toLocaleString()}`, style: 'total', alignment: 'right' }
+                ],
+                styles: {
+                    header: { fontSize: 18, bold: true },
+                    subheader: { fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+                    total: { fontSize: 12, bold: true, margin: [0, 5, 0, 0] }
+                }
+            };
 
-        // Set up PDF download functionality
-        document.getElementById('downloadPDF').addEventListener('click', function() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            doc.text('Factura', 105, 15, null, null, 'center');
-            doc.text(`Cliente: ${invoice.customerName}`, 20, 30);
-            doc.text(`Email: ${invoice.customerEmail}`, 20, 40);
-            doc.text(`País: ${invoice.customerCountry}`, 20, 50);
-            doc.text(`Número de Factura: ${invoice.invoiceNumber}`, 20, 60);
-            doc.text(`Fecha: ${invoice.invoiceDate}`, 20, 70);
-
-            // Add table headers
-            doc.text('Producto', 20, 90);
-            doc.text('Cantidad', 80, 90);
-            doc.text('Precio', 120, 90);
-            doc.text('Total', 160, 90);
-
-            // Add table content
-            let yPos = 100;
-            invoice.items.forEach(item => {
-                doc.text(item.name, 20, yPos);
-                doc.text(item.quantity.toString(), 80, yPos);
-                doc.text(`₡${item.price.toLocaleString()}`, 120, yPos);
-                doc.text(`₡${(item.quantity * item.price).toLocaleString()}`, 160, yPos);
-                yPos += 10;
-            });
-
-            // Add totals
-            yPos += 10;
-            doc.text(`Subtotal: ₡${invoice.subtotal.toLocaleString()}`, 120, yPos);
-            yPos += 10;
-            doc.text(`IVA (13%): ₡${invoice.iva.toLocaleString()}`, 120, yPos);
-            yPos += 10;
-            doc.text(`Matrícula: ₡${invoice.matricula.toLocaleString()}`, 120, yPos);
-            yPos += 10;
-            doc.text(`TOTAL: ₡${invoice.total.toLocaleString()}`, 120, yPos);
-
-            doc.save('factura.pdf');
+            pdfMake.createPdf(docDefinition).download('factura.pdf');
         });
     } else {
-        // If no invoice data is found, display an error message
         document.querySelector('.invoice-container').innerHTML = '<h2>No se encontró información de la factura.</h2>';
     }
 });
