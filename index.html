@@ -3,12 +3,41 @@
 
 <head>
 
-    <!-- Metadata-->
+    <!-- Metadata SEO AVANZADOS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Anadir metadata -->
-
     <title>LAFIT - El Futuro del Fitness</title>
+    <meta name="description" content="Conviértete en un profesional del acondicionamiento físico con LAFIT, único instituto acreditado por el INA en Costa Rica.">
+    <meta name="keywords" content="fitness, entrenamiento físico, cursos, educación, nutrición, acondicionamiento físico,lafit,LAFIT,gym,">
+    <meta name="author" content="LAFIT Institute">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos SEO -->
+    <meta http-equiv="Content-Language" content="es">
+    <link rel="canonical" href="https://www.lafit.com">
+
+    <!-- Metadatos para redes sociales -->
+    <meta property="og:title" content="LAFIT - El Futuro del Fitness">
+    <meta property="og:description" content="Descubre los mejores cursos de acondicionamiento físico y desarrolla tus capacidades con expertos.">
+    <meta property="og:image" content="https://www.lafit.com/images/og-image.jpg">
+    <meta property="og:url" content="https://www.lafit.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LAFIT - El Futuro del Fitness">
+    <meta name="twitter:description" content="Descubre los mejores cursos de acondicionamiento físico y desarrolla tus capacidades con expertos.">
+    <meta name="twitter:image" content="https://www.lafit.com/images/twitter-image.jpg">
+
+    <!-- Metadatos de accesibilidad -->
+    <meta name="theme-color" content="#0100fd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Metadatos específicos para aplicaciones web -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+
     <!-- Anadir icono-->
 
     <!-- Utils  -->
@@ -16,6 +45,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <!-- CSS modulos especificos -->
     <link rel="stylesheet" href="CSS/General.css">
@@ -34,9 +66,8 @@
     <link rel="stylesheet" href="CSS/ContactoLLamativo">
     <link rel="stylesheet" href="CSS/Pie de pagina.css">
     <link rel="stylesheet" href="CSS/Ubicacion.css">
-    <link rel="stylesheet" href="CSS/PaquetesPromociones.css">
-    <link rel="stylesheet" href="CSS/BotonCarrito.css">
- 
+    <link rel="stylesheet" href="CSS/AvisoPromocional.css">
+    <link rel="stylesheet" href="CSS/BotonWhatsaap.css">
     
 
 </head>
@@ -49,6 +80,9 @@
     <!-- Contenido de pagina -->
     <div id="pageContent">
 
+        <a href="https://wa.link/q051sq" target="_blank" id="whatsappBtn" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+        </a>
         <!-- ChatBot -->
         <div id="chatbot" class="chatbot-container">
             <div class="chat-header">
@@ -68,11 +102,30 @@
             <i class="fas fa-comments"></i>
         </button>
 
-        <!-- Carrito de compras -->
-        <button id="openCart" class="btn btn-primary cart-toggle" aria-label="Abrir carrito">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-badge" id="cartBadge">0</span>
-        </button>
+        <div id="promoBar" class="promo-bar slide-up">
+            <div class="promo-content">
+                <!-- Contador a la izquierda -->
+                <div class="promo-countdown">
+                    <div id="countdown" class="countdown"></div>
+                </div>
+        
+                <!-- Texto y botón al centro -->
+                <div class="promo-text">
+                    <div class="promo-text-content">
+                        <h2 class="promo-title">¡Feliz Año Nuevo 2025!</h2>
+                        <p class="promo-description">Nuestro curso de acondicionamiento físico por solo ₡50.000 colones durante 15 días, no te pierdas esta promocion</p>
+                    </div>
+                    <button class="promo-button">Matricular Ahora</button>
+                </div>
+        
+                <!-- Logo a la derecha -->
+                <div class="promo-logo">
+                    <img src="img/Logo (1).png" alt="Logo LAFIT" class="promo-logo-img">
+                </div>
+            </div>
+            <button id="closePromo" class="close-button">&times;</button>
+        </div>
+    
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
@@ -91,7 +144,6 @@
                         <li class="nav-item"><a class="nav-link" href="#PreguntasFrecuentes">Preguntas Frecuentes</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html" data-nav-link>Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="AcercaDe.html" data-nav-link>Acerca de nosotros</a></li>
                     </ul>
                 </div>
                 <div class="social-icons d-none d-lg-flex">
@@ -192,7 +244,7 @@
                     </div>
                     <div class="timeline-item">
                         <div class="image-container left">
-                            <img src="img/LineaTiempo/Alimenta.jpeg" alt="Alimentación para la salud"
+                            <img src="img/LineaTiempo/Nutricion.jpg" alt="Alimentación para la salud"
                                 class="module-image">
                         </div>
                         <div class="content right">
@@ -273,46 +325,6 @@
                 </div>
             </div>
         </section>
-
-        <div id="addToCartModal">
-            <div class="modal-content animate__animated animate__fadeIn">
-                <span class="close">&times;</span>
-                <p id="modalMessage"></p>
-            </div>
-        </div>
-
-        <!-- Paquetes promocion -->
-        <section id="paquetes" class="pricing-section">
-            <div class="container">
-                <h2 class="section-title neon-text text-center">Paquetes de Promociones</h2>
-                <div class="pricing-container" id="pricingContainer">
-                    <!-- Packages will be dynamically loaded here -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- Plantilla Servicios-->
-        <template id="package-template">
-            <div class="pricing-card">
-                <div class="pricing-header">
-                    <h3 class="package-name"></h3>
-                    <div class="price-container">
-                        <span class="price"></span>
-                        <span class="period"></span>
-                    </div>
-                    <p class="description"></p>
-                </div>
-                <div class="features-container">
-                    <div class="features-scroll">
-                        <ul class="features-list">
-                           
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn btn-primary btn-lg w-100 select-package" data-package-name="">Seleccionar Plan</button>
-            </div>
-        </template>
-
 
         <!-- Sobre nosotros -->
         <section id="SobreNosotros" class="py-5">
@@ -437,11 +449,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- Blog -->
+     
+        <!-- BLOG -->
         <section id="Blog" class="py-5 tech-bg">
             <div class="container">
-                <h2 class="text-center mb-5 neon-text">Blog</h2>
+                <h2 class="text-center mb-5 neon-text">Blogs LAFIT</h2>
 
                 <div class="d-flex justify-content-center mb-4">
                     <div class="category-filter d-none d-md-flex">
@@ -464,112 +476,65 @@
                     </div>
                 </div>
 
-                <!-- Grid de artículos -->
-                <div class="row" id="blogGrid">
-                    <!-- Artículo 1 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Estudiantes">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Hombre Cuerpo Completo.jpg" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
-                            <div class="card-body">
-                                <h5 class="card-title">JOSE DAVID SOTO SALAS</h5>
-                                <p class="card-text">Gracias a LAFIT complete el curso "Acondicionamiento Fisico y
-                                    alcance la meta de volverme entrenador personal"</p>
-
+                <!-- Grid de videos -->
+                <div class="row justify-content-center" id="videoGrid">
+                    <!-- Video 1 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
+                        <div class="card h-100 feature-card video-card">
+                            <div class="youtube-shorts-container">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/rj5xqteACo0" 
+                                    title="YouTube Shorts video"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
+                            <div class="card-body">
+                                <h5 class="card-title">Keylor Villalobos</h5>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Artículo 2 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Estudiantes">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Mujer Cuerpo Completo.jpg" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
-                            <div class="card-body">
-                                <h5 class="card-title">DANIELA SOFIA SALAS ROJAS</h5>
-                                <p class="card-text">Me encanto el curso "Acondicionamiento Fisico" Cumpli mi meta de
-                                    convertirme en ina gran entrenadora para ayudar a los demas</p>
-
+                    <!-- Video 2 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
+                        <div class="card h-100 feature-card video-card">
+                            <div class="youtube-shorts-container">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/KFXG5v2doAM" 
+                                    title="YouTube Shorts video"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
+                            <div class="card-body">
+                                <h5 class="card-title">Irma Artavia</h5>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Artículo 3 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Nutricion">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Hombre Nutricion.PNG" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
+                    <!-- Video 3 -->
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
+                        <div class="card h-100 feature-card video-card">
+                            <div class="youtube-shorts-container">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/wnrk501Ag3k" 
+                                    title="YouTube Shorts video"
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title">JOSE OVIEDO SALAZAR</h5>
-                                <p class="card-text">La alimentación es algo crucial para nuestros cuerpos, prueba comer
-                                    organiazda mente y beber agua todo el dia.</p>
-
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Artículo 4 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Nutricion">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Mujer Nutricion.jpg" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
-                            <div class="card-body">
-                                <h5 class="card-title">MARIA PAULA HERRERA ROJAS</h5>
-                                <p class="card-text">La nutricion desde temprana edad es totalmente necesario para
-                                    nuestro desarrollo y obtener una gran condicion fisica</p>
-
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Artículo 5 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Ejercicios">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Mujer Ejercicios.PNG" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
-                            <div class="card-body">
-                                <h5 class="card-title">CARLA JIMENA CESPEDEZ OVIEDO</h5>
-                                <p class="card-text">Salir a correr temprano una hora te ayuda a que tu cuerpo este mas
-                                    saludable y tu dia a dia sea mas positivo</p>
-
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Artículo 6 -->
-                    <div class="col-md-4 mb-4 blog-item" data-category="Ejercicios">
-                        <div class="card h-100 feature-card blog-card">
-                            <img src="img/Blog/Hombre Ejercicios.PNG" class="card-img-top"
-                                alt="Últimas tendencias en fitness">
-                            <div class="card-body">
-                                <h5 class="card-title">LUIS CALDERON ARRIETA</h5>
-                                <p class="card-text">Estirar tu cuerpo diaramente, haces que te relajes y tengas mas
-                                    circulacion en tu cuerpo, ademas, de evitar malas posturas</p>
-
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">PUBLICADO EL 10 DE OCTUBRE, 2024</small>
+                                <h5 class="card-title">Jeremy Alvares</h5>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
 
@@ -658,8 +623,6 @@
             </div>
         </section>
 
-    
-
     </div>
 
     <!-- Contenedor de la tarjeta expandida -->
@@ -733,6 +696,7 @@
     <script src="SCRIPTS/NavBar.js"></script>
     <script src="SCRIPTS/PreguntasFrecuentes.js"></script>
     <script src="SCRIPTS/PaquetesPromociones.js"></script>
+    <script src="SCRIPTS/AvisoPromocional.js"></script>
 
     
     <script>

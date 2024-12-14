@@ -1,0 +1,144 @@
+/* Barra promocional */
+.promo-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../img/Sparks.PNG');
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Asegura que la imagen no se repita */
+    color: white;
+    z-index: 1001;
+    height: 200px; /* Ajusta la altura según necesites */
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+    animation: slideUp 0.5s ease-out; /* Animación de entrada */
+}
+
+.promo-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/Sparks.PNG'); /* Ruta de la imagen de fuegos artificiales */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px); /* Desenfoque de la imagen */
+    z-index: -1;
+}
+
+/* Animación de entrada */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Contenido principal */
+.promo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contador a la izquierda */
+.promo-countdown {
+    flex: 1;
+    text-align: left;
+}
+
+.countdown {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Texto y botón al centro */
+.promo-text {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-text-content {
+    text-align: center;
+}
+
+.promo-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.promo-description {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.promo-button {
+    background: #FFFFFF;
+    color: #0100FD;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.promo-button:hover {
+    background: #0100FD;
+    color: #FFFFFF;
+}
+
+/* Logo a la derecha */
+.promo-logo {
+    flex: 1;
+    text-align: right;
+}
+
+.promo-logo-img {
+    height: 120px;
+    width: auto;
+}
+
+/* Botón de cerrar */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.close-button:hover {
+    background: rgba(255, 0, 0, 0.8);
+}

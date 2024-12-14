@@ -1,18 +1,36 @@
-/* BLOG*/
-.blog-card {
+/* Videos de YouTube */
+.video-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-.blog-card.show {
+.video-card.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-.blog-card:hover {
+.video-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+}
+
+/* YouTube Shorts Container */
+.youtube-shorts-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.78%; /* 16:9 -> 9:16 aspect ratio for vertical videos */
+    background-color: #000;
+}
+
+.youtube-shorts-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 8px 0 0;
 }
 
 .btn-outline-primary {
@@ -27,17 +45,10 @@
     color: var(--dark-color);
 }
 
-#loadMoreBtn {
-    transition: all 0.3s ease;
-}
-
-#loadMoreBtn:hover {
-    transform: scale(1.05);
-}
-
 .category-filter {
     display: flex;
     gap: 10px;
+    margin-bottom: 2rem;
 }
 
 .dropdown-menu {
@@ -56,34 +67,32 @@
     color: var(--dark-color);
 }
 
-#Blog .card-text {
+#Videos .card-text {
     color: rgb(255, 255, 255);
 }
 
-#Blog .card-title {
-    color: #615f5f;
+#Videos .card-title {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
-#Blog .card-footer .text-muted {
+#Videos .card-footer .text-muted {
     color: #d0d0d0 !important;
 }
 
-#Blog .feature-card.blog-card {
-    background-color: rgba(0, 0, 0, 0.7);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video-item {
+        width: 280px;
+        margin: 0 auto;
+    }
 }
-
-#Blog .blog-item[data-category] .card-text {
+.card-title{
+    color: var(--primary-color);
+}
+.card-text{
     color: white;
 }
 
-#Blog .blog-item[data-category] .card-title.neon-text {
-    color: #a0a0a0;
-}
 
-#Blog .blog-item[data-category] .card-footer .text-muted {
-    color: #d0d0d0 !important;
-}
-
-#Blog .blog-item[data-category] .feature-card.blog-card {
-    background-color: rgba(0, 0, 0, 0.7);
-}

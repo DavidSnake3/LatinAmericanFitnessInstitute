@@ -73,3 +73,42 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1500);
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const videoGrid = document.getElementById('videoGrid');
+    const filterBtns = document.querySelectorAll('[data-filter]');
+    const videoItems = document.querySelectorAll('.video-item');
+
+    function showVideos() {
+        videoItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.querySelector('.video-card').classList.add('show');
+            }, index * 100);
+        });
+    }
+
+    showVideos();
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+            
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            btn.classList.add('active');
+
+            videoItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || filter === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            videoItems.forEach(item => item.querySelector('.video-card').classList.remove('show'));
+            setTimeout(showVideos, 100);
+        });
+    });
+});
+
+
+

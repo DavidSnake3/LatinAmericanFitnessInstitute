@@ -10,9 +10,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/MaxA.jpg');
+    background-image: url('../img/MaxFoto.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     filter: blur(2px);
     opacity: 0.3;
     z-index: 0;
@@ -33,8 +34,8 @@
 
 #SobreNosotros p {
     text-align: justify;
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.7;
 }
 
 #SobreNosotros img {
