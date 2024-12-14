@@ -94,39 +94,131 @@
     margin-bottom: 10px;
 }
 
+/* Estilo para las tarjetas de detalles del curso y requisitos de ingreso */
 .info-card {
-    background-color: rgba(0, 0, 0, 0.637);
-    border: 1px solid var(--primary-color);
-    border-radius: 15px;
-    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--primary-color);  /* Borde de color unificado */
+    border-radius: 20px;
+    padding: 2.5rem;
     margin-bottom: 2rem;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    height: 100%; /* Aseguramos que ambas tarjetas tengan la misma altura */
 }
 
 .info-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--primary-color);
+    transform: translateY(-15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
+/* Estilo de los encabezados */
 .info-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
+/* Estilo para los iconos */
+.info-card i {
+    color: var(--primary-color);
+    margin-right: 0.7rem;
+    font-size: 1.6rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-card i:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para las listas dentro de las tarjetas */
 .info-card ul {
     list-style-type: none;
     padding-left: 0;
 }
 
 .info-card li {
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin-bottom: 0.7rem;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    padding-left: 20px;
+    position: relative;
 }
 
-.info-card i {
+/* Iconos antes de cada ítem de lista */
+.info-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Para asegurarse de que ambas tarjetas tengan la misma altura */
+.row .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Sección de detalles del curso */
+.course-details {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--primary-color);
+}
+
+.requirements {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--primary-color);
+}
+
+.requirements h3, .course-details h3 {
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-right: 0.5rem;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Mejora de las listas */
+.course-details ul li, .requirements ul li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.course-details ul li::before, .requirements ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Animación para la entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .image-section {

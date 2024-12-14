@@ -9,8 +9,6 @@
     z-index: 2;
 }
 
-
-
 .neon-text {
     text-shadow: 0 0 5px var(--primary-color),
         0 0 10px var(--primary-color),

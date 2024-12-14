@@ -101,26 +101,33 @@
             <i class="fas fa-comments"></i>
         </button>
 
-        <div id="promoBar" class="promo-bar slide-up">
+        <!-- Aviso de Promociones -->
+        <div id="promoBar" class="promo-bar">
             <div class="promo-content">
-                <!-- Contador a la izquierda -->
-                <div class="promo-countdown">
-                    <div id="countdown" class="countdown"></div>
-                </div>
-        
-                <!-- Texto y botón al centro -->
-                <div class="promo-text">
-                    <div class="promo-text-content">
-                        <h2 class="promo-title">¡Feliz Año Nuevo 2025!</h2>
-                        <p class="promo-description">Nuestro curso de acondicionamiento físico por solo ₡50.000 colones durante 15 días</p>
+                <div class="promo-text">¡Feliz año nuevo!</div>
+                <div class="promo-subtext">¡Promocion  acondicionamiento fisico!</div>
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span id="days">00</span>
+                        <span class="label">DÍAS</span>
                     </div>
-                    <button class="promo-button">Matricular Ahora</button>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="hours">00</span>
+                        <span class="label">HRS</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="minutes">00</span>
+                        <span class="label">MIN</span>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <span id="seconds">00</span>
+                        <span class="label">SEG</span>
+                    </div>
                 </div>
-        
-                <!-- Logo a la derecha -->
-                <div class="promo-logo">
-                    <img src="img/Logo (1).png" alt="Logo LAFIT" class="promo-logo-img">
-                </div>
+                <button class="promo-button">MATRICULAR AHORA</button>
             </div>
             <button id="closePromo" class="close-button">&times;</button>
         </div>
@@ -254,30 +261,30 @@
                     </div>
                 </div>
                 <div class="row mt-5 justify-content-center">
+                    <!-- Detalles del curso -->
                     <div class="col-md-6">
-                        <div class="info-card">
+                        <div class="info-card course-details">
                             <h3><i class="fas fa-info-circle"></i> Detalles del Curso</h3>
                             <ul>
-                                <li><i class="fas fa-clock"></i> Duración: 512 h / 17 meses</li>
-                                <li><i class="fas fa-chalkboard-teacher"></i> Modalidad: Presencial y virtual</li>
-                                <li><i class="fas fa-calendar-alt"></i> Matrícula: Diciembre 2024</li>
-                                <li><i class="fas fa-play"></i> Inicio de clases: Enero 2025</li>
+                                <li><i class="fas fa-clock"></i> <strong>Duración:</strong> 512 h / 17 meses</li>
+                                <li><i class="fas fa-chalkboard-teacher"></i> <strong>Modalidad:</strong> Presencial y virtual</li>
+                                <li><i class="fas fa-calendar-alt"></i> <strong>Matrícula:</strong> Diciembre 2024</li>
+                                <li><i class="fas fa-play"></i> <strong>Inicio de clases:</strong> Enero 2025</li>
                             </ul>
                         </div>
                     </div>
+                    <!-- Requisitos de Ingreso -->
                     <div class="col-md-6">
-                        <div class="info-card">
+                        <div class="info-card requirements">
                             <h3><i class="fas fa-user-check"></i> Requisitos de Ingreso</h3>
                             <ul>
-                                <li><i class="fas fa-graduation-cap"></i> III Ciclo de la educación general</li>
-                                <li><i class="fas fa-user"></i> Edad mínima de 18 años</li>
-                                <li><i class="fas fa-heartbeat"></i> Dictamen médico que especifique que goza de buena
-                                    salud, física y mental</li>
+                                <li><i class="fas fa-graduation-cap"></i> <strong>III Ciclo de la educación general</strong></li>
+                                <li><i class="fas fa-user"></i> <strong>Edad mínima de 18 años</strong></li>
+                                <li><i class="fas fa-heartbeat"></i> <strong>Dictamen médico</strong> que especifique buena salud física y mental</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- Talleres -->
@@ -326,12 +333,13 @@
         </section>
 
         <!-- Sobre nosotros -->
+         
         <section id="SobreNosotros" class="py-5">
             <div class="background-image"></div>
             <div class="container position-relative">
+                <h2 class="mb-4 neon-text" >Sobre Nosotros</h2>
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <h2 class="mb-4 neon-text">Sobre Nosotros</h2>
                         <p>En el Instituto Latinoamericano de Fitness (LAFIT), te ofrecemos la oportunidad de
                             convertirte en un profesional altamente capacitado en el campo del acondicionamiento físico.
                             Somos la única institución en Costa Rica acreditada por el INA en el programa de Instructor
@@ -346,22 +354,23 @@
             </div>
         </section>
 
+        <!-- Por que Elegirnos -->
         <section id="por-que-nosotros" class="py-5 tech-bg">
     <div class="container">
         <h2 class="text-center mb-5 neon-text">¿Por qué estudiar con nosotros?</h2>
         <div class="carousel-container">
             <div class="carousel-track">
-                <div class="reason-card" style="background-image: url('img/MaxFoto.jpg');">
+                <div class="reason-card" style="background-image: url('');">
                     <img src="img/INA_Blanco.png" alt="Icono de gimnasio" class="card-icon mb-3">
                     <h3>Acreditación INA</h3>
                     <p>Somos la única institución en Costa Rica acreditada por el INA en el programa de Instructor para el Acondicionamiento Físico.</p>
                 </div>
-                <div class="reason-card" style="background-image: url('img/MaxFoto.jpg');">
+                <div class="reason-card" style="background-image: url('');">
                     <i class="fas fa-users fa-3x mb-3"></i>
                     <h3>Instructores Expertos</h3>
                     <p>Nuestro equipo de instructores está compuesto por profesionales altamente calificados y con amplia experiencia en el campo.</p>
                 </div>
-                <div class="reason-card" style="background-image: url('img/MaxFoto.jpg');">
+                <div class="reason-card" style="background-image: url('');">
                     <i class="fas fa-dumbbell fa-3x mb-3"></i>
                     <h3>Instalaciones de Vanguardia</h3>
                     <p>Contamos con instalaciones modernas y equipadas con la última tecnología en acondicionamiento físico.</p>
@@ -376,7 +385,7 @@
         <section id="team" class="py-5 tech-bg ">
             <div class="container">
                 <h2 class="text-center mb-5 neon-text">Nuestro Equipo</h2>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-md-4 mb-4">
                         <div class="card team-member h-100 ">
                             <img src="img/Equipo/Max.jpg" class="card-img-top" alt="Max Acuña" loading="lazy">

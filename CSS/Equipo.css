@@ -1,38 +1,63 @@
-.feature-card {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 1px solid var(--primary-color);
-    transition: all 0.3s ease;
+/* Sección del equipo */
+#team {
+    background-color: var(--dark-color);
+    padding: 60px 20px;
 }
 
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px var(--primary-color);
-}
-
+/* Tarjetas de los miembros del equipo */
 .team-member {
-    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
 }
 
 .team-member:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
-.team-info {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+/* Imagen de la tarjeta */
+.team-member img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-color); /* Separación visual */
 }
 
-.team-member:hover .team-info {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
+/* Contenido de las tarjetas */
+.team-member .card-body {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Garantiza que el contenido ocupe el espacio disponible */
 }
 
-.team-info .close-info {
-    cursor: pointer;
-    color: var(--secondary-color);
+/* Títulos y descripciones */
+.team-member .card-title {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.team-member .card-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+/* Asegura que las tarjetas tengan alturas iguales en la fila */
+.row .col-md-4 {
+    display: flex;
+    align-items: stretch; 
 }

@@ -1,195 +1,139 @@
 /* Barra promocional */
 .promo-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url('../img/Sparks.PNG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    z-index: 1001;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
-    animation: slideUp 0.5s ease-out;
-}
-
-.promo-bar::before {
-    content: "";
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-image: url('../img/Sparks.PNG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px);
-    z-index: -1;
+    background-color: #0100fd;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    animation: slideDown 0.5s ease-out;
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* El estilo cuando el navbar debe estar abajo */
+nav.promo-active {
+    position: fixed;
+    top: 77px; /* Mueve el navbar hacia abajo, ajusta según el tamaño del aviso */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Asegura que el navbar esté debajo de la barra promocional */
 }
 
 /* Animación de entrada */
-@keyframes slideUp {
+@keyframes slideDown {
     from {
-        transform: translateY(100%);
+        transform: translateY(-100%);
     }
     to {
         transform: translateY(0);
     }
 }
 
-/* Contenido principal */
-.promo-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* Contador a la izquierda */
-.promo-countdown {
-    flex: 1;
-    text-align: left;
-}
-
-.countdown {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-/* Texto y botón al centro */
+/* Otros estilos de la barra promocional (contadores, texto, botones, etc.) */
 .promo-text {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.promo-text-content {
-    text-align: center;
-}
-
-.promo-title {
-    font-size: 2.5em;
+    font-size: 24px;
     font-weight: bold;
-    margin: 0;
-    color: var(--primary-color);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
 }
 
-.promo-description {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+.promo-subtext {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.countdown-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    min-width: 50px;
+}
+
+.countdown-item span:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.countdown-item .label {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.countdown-separator {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -10px;
 }
 
 .promo-button {
-    background: #FFFFFF;
-    color: #0100FD;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
-    padding: 12px 30px;
-    font-size: 1.2em;
+    padding: 8px 20px;
+    border-radius: 4px;
     font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .promo-button:hover {
-    background: #0100FD;
-    color: #FFFFFF;
+    transform: scale(1.05);
 }
 
-/* Logo a la derecha */
-.promo-logo {
-    flex: 1;
-    text-align: right;
-}
-
-.promo-logo-img {
-    height: 120px;
-    width: auto;
-}
-
-/* Botón de cerrar */
 .close-button {
     position: absolute;
-    top: 10px;
     right: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
     border: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    padding: 5px;
 }
 
-.close-button:hover {
-    background: rgba(255, 0, 0, 0.8);
-}
-
-/* Responsive design */
+/* Media queries */
 @media (max-width: 768px) {
-    .promo-bar {
-        height: auto;
-        padding: 15px 20px;
-    }
-
     .promo-content {
         flex-direction: column;
+        gap: 10px;
         text-align: center;
     }
 
-    .promo-countdown, .promo-text, .promo-logo {
-        flex: none;
-        width: 100%;
-        margin-bottom: 10px;
+    .promo-text, .promo-subtext {
+        font-size: 16px;
     }
 
-    .promo-title {
-        font-size: 1.8em;
+    .countdown-item {
+        min-width: 40px;
     }
 
-    .promo-description {
-        font-size: 1.2em;
+    .countdown-item span:first-child {
+        font-size: 16px;
     }
 
-    .promo-button {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    .promo-logo-img {
-        height: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .promo-title {
-        font-size: 1.5em;
-    }
-
-    .promo-description {
-        font-size: 1em;
-    }
-
-    .promo-button {
-        font-size: 1em;
-        padding: 10px 20px;
+    .countdown-item .label {
+        font-size: 10px;
     }
 }
