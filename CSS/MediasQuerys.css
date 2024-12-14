@@ -153,3 +153,68 @@
         bottom: 79px !important; /* Ajuste para estar sobre el chatbot */
     }
 }
+
+/* AvisoPromocional */
+@media (max-width: 768px) {
+    .promo-bar {
+        height: 150px; /* Reduce la altura en pantallas pequeñas */
+        padding: 15px 20px;
+    }
+
+    .promo-title {
+        font-size: 1em; /* Reduce el tamaño de la fuente del título */
+    }
+
+    .promo-description {
+        font-size: 9.2em; /* Reduce el tamaño de la descripción */
+    }
+
+    .promo-button {
+        font-size: 1em; /* Reduce el tamaño del botón */
+        padding: 10px 20px;
+    }
+
+    .promo-content {
+        flex-direction: column; /* Los elementos se apilan verticalmente en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .promo-logo {
+        margin-top: 10px;
+    }
+
+    .promo-logo-img {
+        height: 100px; /* Ajusta el tamaño del logo */
+    }
+
+    .promo-countdown {
+        margin-bottom: 20px; /* Agrega margen inferior para separación */
+    }
+
+    .promo-text-content {
+        margin: 10px 0; /* Agrega espacio alrededor del contenido central */
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-title {
+        font-size: 1.8em; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+
+    .promo-description {
+        font-size: 1.1em;
+    }
+
+    .promo-button {
+        font-size: 0.9em; /* Ajuste final del botón */
+        padding: 8px 15px;
+    }
+
+    .promo-logo-img {
+        height: 80px; /* Ajusta el logo para pantallas pequeñas */
+    }
+
+    .promo-text-content {
+        margin: 5px 0;
+    }
+}

@@ -1,0 +1,147 @@
+#por-que-nosotros {
+    background-color: transparent;
+    color: var(--light-color);
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 40px;
+}
+
+.reason-card {
+    flex: 0 0 300px;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.reason-card i,
+.reason-card h3,
+.reason-card p {
+    position: relative;
+    z-index: 2;
+}
+
+.reason-card i {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 3rem;
+}
+
+.reason-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.reason-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.reason-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.reason-card img.card-icon,
+.reason-card h3,
+.reason-card p {
+    position: relative;
+    z-index: 2;
+}
+
+.reason-card img.card-icon {
+    width: 1000px; /* Ajusta según el tamaño deseado */
+    height: 80px; /* Ajusta según el tamaño deseado */
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 40px;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 3 - 40px * 3)); /* Ajusta esto según el ancho de tus tarjetas y el gap */
+    }
+}
+
+.carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .reason-card {
+        flex: 0 0 280px;
+        height: 400px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .reason-card {
+        flex: 0 0 240px;
+        height: 350px;
+        padding: 15px;
+    }
+}
