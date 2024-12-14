@@ -1,0 +1,76 @@
+/* Estilos para el modal de matrícula */
+#matriculaModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+}
+
+#matriculaModal .modal-header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+#matriculaModal h5 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+#matriculaModal .modal-body label {
+    font-weight: bold;
+}
+
+#matriculaModal .modal-footer {
+    border-top: 1px solid #ffffff;
+}
+
+
+/* Botón flotante de Matrícula Rápida */
+.floating-matricula-btn {
+    position: fixed;
+    bottom: 200px; /* Espaciado desde el borde inferior */
+    right: 20px; /* Espaciado desde el borde derecho */
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    width: 80px; /* Tamaño inicial del círculo */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; /* Transiciones suaves */
+    cursor: pointer;
+    z-index: 1000;
+    overflow: hidden; /* Para ocultar el texto al ser un círculo */
+}
+
+/* Texto del botón (oculto por defecto) */
+.matricula-text {
+    opacity: 0;
+    margin-left: 10px; /* Espaciado al expandirse */
+    white-space: nowrap; /* Evita saltos de línea */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-10px);
+}
+
+/* Expansión al pasar el mouse */
+.floating-matricula-btn:hover {
+    width: 200px; /* Se expande horizontalmente */
+    border-radius: 40px; /* Cambia de círculo a ovalado */
+    justify-content: flex-start; /* Alinea el ícono y texto a la izquierda */
+    padding-left: 20px; /* Da espacio al ícono y texto */
+}
+
+.floating-matricula-btn:hover .matricula-text {
+    opacity: 1; /* Muestra el texto */
+    transform: translateX(0); /* Posición normal */
+}
+
+/* Ícono del botón */
+.floating-matricula-btn i {
+    font-size: 2rem; /* Tamaño del ícono */
+}
+

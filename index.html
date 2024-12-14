@@ -9,18 +9,10 @@
     <title>LAFIT</title>
     <meta name="description" content="Conviértete en un profesional del acondicionamiento físico con LAFIT, único instituto acreditado por el INA en Costa Rica.">
     <meta name="keywords" content="fitness, entrenamiento físico, cursos, educación, nutrición, acondicionamiento físico,lafit,LAFIT,gym">
-    <meta name="author" content="LAFIT Institute">
+    <meta name="author" content="LAFIT Institute, desarrollado por David Josue Villegas Salas" />
     <meta name="robots" content="index, follow">
     <meta name="Classification" content="Business">
     <meta name="copyright" content="LAFIT">
-    <meta name="google-site-verification" content="-GRjU20jvaNp0BSrlcM4nI2sTWC5oygVenE7I95H370" />
-
-
-    <!-- Etiquetas de seguridad  -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
     <!-- Metadatos SEO -->
     <meta http-equiv="Content-Language" content="es">
@@ -76,6 +68,7 @@
     <link rel="stylesheet" href="CSS/AvisoPromocional.css">
     <link rel="stylesheet" href="CSS/BotonWhatsaap.css">
     <link rel="stylesheet" href="CSS/PorqueElegirnos.css">
+    <link rel="stylesheet" href="CSS/Matricula.css">
 
 
 </head>
@@ -87,6 +80,11 @@
 
     <!-- Contenido de pagina -->
     <div id="pageContent">
+
+        <!-- Matricular -->
+        <button class="btn btn-primary floating-matricula-btn" id="btnMatriculaRapida" data-bs-toggle="modal" data-bs-target="#matriculaModal">
+            Matrícula Rápida
+        </button>
 
         <!-- Botón de WhatsApp -->
         <a href="https://wa.link/q051sq" target="_blank" id="openWhatsApp"
@@ -180,7 +178,7 @@
                         <i class="fab fa-tiktok"></i>
                         <span class="sr-only">TikTok</span>
                     </a>
-                    <a href="" class="social-icon" aria-label="Suscribirse en YouTube" target="_blank"
+                    <a href="https://www.youtube.com/@lafitinstitute" class="social-icon" aria-label="Suscribirse en YouTube" target="_blank"
                         rel="noopener noreferrer" title="Suscribirse en YouTube">
                         <i class="fab fa-youtube"></i>
                         <span class="sr-only">YouTube</span>
@@ -667,6 +665,69 @@
 
     </div>
 
+    <!-- Modal Matrícula Rápida -->
+    <div class="modal fade" id="matriculaModal" tabindex="-1" aria-labelledby="matriculaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="matriculaModalLabel">Matrícula Rápida</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="matriculaForm">
+                        <!-- Campos de entrada -->
+                        <div class="mb-3">
+                            <label for="nombreCompleto" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cedula" class="form-label">Cédula</label>
+                            <input type="text" class="form-control" id="cedula" name="cedula" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lugarDomicilio" class="form-label">Lugar de Domicilio</label>
+                            <input type="text" class="form-control" id="lugarDomicilio" name="lugarDomicilio" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fotoCedFrontal" class="form-label">Foto Cédula Frontal (JPG, PNG)</label>
+                            <input type="file" class="form-control" id="fotoCedFrontal" name="fotoCedFrontal" accept=".jpg,.png" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fotoCedDetras" class="form-label">Foto Cédula Detrás (JPG, PNG)</label>
+                            <input type="file" class="form-control" id="fotoCedDetras" name="fotoCedDetras" accept=".jpg,.png" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comprobantePago" class="form-label">Comprobante de Pago (PDF)</label>
+                            <input type="file" class="form-control" id="comprobantePago" name="comprobantePago" accept=".pdf" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <!-- Información bancaria -->
+                        <div class="mt-5 p-3 bg-light border rounded">
+                            <h5>Información Bancaria</h5>
+                            <p><strong>Cuenta BAC:</strong> AAAAAAAAAA</p>
+                            <p><strong>Número de cuenta BAC:</strong> 123123123</p>
+                            <p><strong>Número de cuenta IBAN:</strong> 123123123</p>
+                            <p><strong>SINPE:</strong> 123123</p>
+                            <p><strong>A nombre de:</strong> BC GYM FITNESS S.A</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" form="matriculaForm">Enviar Matrícula</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenedor de la tarjeta expandida -->
     <div id="expandedCard" class="expanded-card">
         <span class="close-card">&times;</span>
@@ -719,6 +780,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 LAFIT. Todos los derechos reservados.</p>
+                <p>Desarrollado por <a href="www.linkedin.com/in/davidsnake-dev" target="_blank" rel="noopener">David Josue Villegas Salas</a></p>
             </div>
         </div>
     </footer>
@@ -740,6 +802,7 @@
     <script src="SCRIPTS/PaquetesPromociones.js"></script>
     <script src="SCRIPTS/AvisoPromocional.js"></script>
     <script src="SCRIPTS/PorqueElegirnos.js"></script>
+    <script src="SCRIPTS/Matricula.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
