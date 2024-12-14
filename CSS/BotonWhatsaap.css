@@ -1,26 +1,25 @@
-/* Botón flotante de WhatsApp */
-.whatsapp-btn {
+/* Botón de WhatsApp */
+.whatsapp-toggle {
     position: fixed;
-    bottom: 110px; /* Ajusta esta distancia si quieres que esté más arriba o más abajo */
-    right: 20px; /* Ajusta la distancia desde el borde derecho */
-    background-color: #25D366; /* Color verde de WhatsApp */
+    bottom: 110px; /* Posición encima del chatbot */
+    right: 20px;
+    background-color: #25d366; /* Color típico de WhatsApp */
     color: white;
-    font-size: 2em;
     border-radius: 50%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+    width: 80px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
 }
 
-.whatsapp-btn:hover {
-    background-color: #128C7E; /* Cambia a un color más oscuro cuando se pasa el mouse */
-}
-
-.whatsapp-btn i {
-    font-size: 1.5em; /* Tamaño del ícono */
+/* Ocultar botón de WhatsApp cuando el chatbot está abierto */
+.whatsapp-toggle.hidden {
+    opacity: 0; /* Botón invisible */
+    pointer-events: none; /* No se puede interactuar con él */
+    transform: scale(0.9); /* Pequeña reducción para una transición suave */
 }

@@ -6,9 +6,9 @@
     <!-- Metadata SEO AVANZADOS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAFIT - El Futuro del Fitness</title>
+    <title>LAFIT</title>
     <meta name="description" content="Conviértete en un profesional del acondicionamiento físico con LAFIT, único instituto acreditado por el INA en Costa Rica.">
-    <meta name="keywords" content="fitness, entrenamiento físico, cursos, educación, nutrición, acondicionamiento físico,lafit,LAFIT,gym,">
+    <meta name="keywords" content="fitness, entrenamiento físico, cursos, educación, nutrición, acondicionamiento físico,lafit,LAFIT,gym">
     <meta name="author" content="LAFIT Institute">
     <meta name="robots" content="index, follow">
 
@@ -35,18 +35,14 @@
 
     <!-- Metadatos específicos para aplicaciones web -->
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-
-    <!-- Anadir icono-->
+    <link rel="icon" href="img/android-chrome-192x192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="img/android-chrome-512x512.png">
 
     <!-- Utils  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
     <!-- CSS modulos especificos -->
@@ -68,7 +64,7 @@
     <link rel="stylesheet" href="CSS/Ubicacion.css">
     <link rel="stylesheet" href="CSS/AvisoPromocional.css">
     <link rel="stylesheet" href="CSS/BotonWhatsaap.css">
-    
+
 
 </head>
 
@@ -80,9 +76,12 @@
     <!-- Contenido de pagina -->
     <div id="pageContent">
 
-        <a href="https://wa.link/q051sq" target="_blank" id="whatsappBtn" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.link/q051sq" target="_blank" id="openWhatsApp"
+            class="btn btn-primary chatbot-toggle whatsapp-toggle" aria-label="Abrir WhatsApp">
+            <i class="fab fa-whatsapp"></i>
         </a>
+
         <!-- ChatBot -->
         <div id="chatbot" class="chatbot-container">
             <div class="chat-header">
@@ -96,7 +95,6 @@
                 <button id="sendMessage" class="btn btn-primary">Enviar</button>
             </div>
         </div>
-
         <!-- ChatBot abrir -->
         <button id="openChatbot" class="btn btn-primary chatbot-toggle" aria-label="Abrir chatbot">
             <i class="fas fa-comments"></i>
@@ -108,16 +106,17 @@
                 <div class="promo-countdown">
                     <div id="countdown" class="countdown"></div>
                 </div>
-        
+
                 <!-- Texto y botón al centro -->
                 <div class="promo-text">
                     <div class="promo-text-content">
                         <h2 class="promo-title">¡Feliz Año Nuevo 2025!</h2>
-                        <p class="promo-description">Nuestro curso de acondicionamiento físico por solo ₡50.000 colones durante 15 días, no te pierdas esta promocion</p>
+                        <p class="promo-description">Nuestro curso de acondicionamiento físico por solo ₡50.000 colones
+                            durante 15 días, no te pierdas esta promocion</p>
                     </div>
                     <button class="promo-button">Matricular Ahora</button>
                 </div>
-        
+
                 <!-- Logo a la derecha -->
                 <div class="promo-logo">
                     <img src="img/Logo (1).png" alt="Logo LAFIT" class="promo-logo-img">
@@ -125,7 +124,7 @@
             </div>
             <button id="closePromo" class="close-button">&times;</button>
         </div>
-    
+
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
@@ -163,8 +162,8 @@
                         <i class="fab fa-tiktok"></i>
                         <span class="sr-only">TikTok</span>
                     </a>
-                    <a href="https://www.youtube.com" class="social-icon" aria-label="Suscribirse en YouTube"
-                        target="_blank" rel="noopener noreferrer" title="Suscribirse en YouTube">
+                    <a href="" class="social-icon" aria-label="Suscribirse en YouTube" target="_blank"
+                        rel="noopener noreferrer" title="Suscribirse en YouTube">
                         <i class="fab fa-youtube"></i>
                         <span class="sr-only">YouTube</span>
                     </a>
@@ -449,7 +448,7 @@
                 </div>
             </div>
         </section>
-     
+
         <!-- BLOG -->
         <section id="Blog" class="py-5 tech-bg">
             <div class="container">
@@ -482,17 +481,16 @@
                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
                         <div class="card h-100 feature-card video-card">
                             <div class="youtube-shorts-container">
-                                <iframe 
-                                    src="https://www.youtube.com/embed/rj5xqteACo0" 
-                                    title="YouTube Shorts video"
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                <iframe src="https://www.youtube.com/embed/rj5xqteACo0" title="YouTube Shorts video"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
                                 </iframe>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Keylor Villalobos</h5>
-                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento
+                                    fisico.</p>
                             </div>
                         </div>
                     </div>
@@ -501,17 +499,16 @@
                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
                         <div class="card h-100 feature-card video-card">
                             <div class="youtube-shorts-container">
-                                <iframe 
-                                    src="https://www.youtube.com/embed/KFXG5v2doAM" 
-                                    title="YouTube Shorts video"
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                <iframe src="https://www.youtube.com/embed/KFXG5v2doAM" title="YouTube Shorts video"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
                                 </iframe>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Irma Artavia</h5>
-                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento
+                                    fisico.</p>
                             </div>
                         </div>
                     </div>
@@ -520,17 +517,16 @@
                     <div class="col-sm-6 col-md-4 col-lg-3 mb-4 video-item" data-category="Estudiantes">
                         <div class="card h-100 feature-card video-card">
                             <div class="youtube-shorts-container">
-                                <iframe 
-                                    src="https://www.youtube.com/embed/wnrk501Ag3k" 
-                                    title="YouTube Shorts video"
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                <iframe src="https://www.youtube.com/embed/wnrk501Ag3k" title="YouTube Shorts video"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen>
                                 </iframe>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Jeremy Alvares</h5>
-                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento fisico.</p>
+                                <p class="card-text">Opinion de nuestros estudiantes sobre el curso de acondicionamiento
+                                    fisico.</p>
                             </div>
                         </div>
                     </div>
@@ -685,7 +681,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <!-- Scripts modulos especificos -->
     <script src="SCRIPTS/Particulas.js"></script>
     <script src="SCRIPTS/Equipo.js"></script>
@@ -697,10 +693,10 @@
     <script src="SCRIPTS/PreguntasFrecuentes.js"></script>
     <script src="SCRIPTS/PaquetesPromociones.js"></script>
     <script src="SCRIPTS/AvisoPromocional.js"></script>
+    <script src="SCRIPTS/WhatsAppBoton.js"></script>
 
-    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cartButton = document.getElementById('openCart');
             const cartBadge = document.getElementById('cartBadge');
             const modal = document.getElementById('addToCartModal');
@@ -734,21 +730,21 @@
                 showModal(`Se ha agregado el paquete ${package.name} al carrito`);
             }
 
-            cartButton.addEventListener('click', function() {
+            cartButton.addEventListener('click', function () {
                 window.location.href = 'carrito.html';
             });
 
-            closeBtn.addEventListener('click', function() {
+            closeBtn.addEventListener('click', function () {
                 modal.style.display = 'none';
             });
 
-            window.addEventListener('click', function(event) {
+            window.addEventListener('click', function (event) {
                 if (event.target == modal) {
                     modal.style.display = 'none';
                 }
             });
 
-            document.getElementById('pricingContainer').addEventListener('click', function(e) {
+            document.getElementById('pricingContainer').addEventListener('click', function (e) {
                 if (e.target.classList.contains('select-package')) {
                     const packageName = e.target.dataset.packageName;
                     const package = {
