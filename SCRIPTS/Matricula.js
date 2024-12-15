@@ -1,28 +1,65 @@
-document.getElementById('matriculaForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita el envío por defecto
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('matriculaModal');
+    const openBtn = document.getElementById('openModal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+    const form = document.getElementById('matriculaForm');
 
-    const fotoFrontal = document.getElementById('fotoCedFrontal').files[0];
-    const fotoDetras = document.getElementById('fotoCedDetras').files[0];
-    const comprobante = document.getElementById('comprobantePago').files[0];
-
-    // Validar formatos de imagen y PDF
-    if (fotoFrontal && !['image/png', 'image/jpeg'].includes(fotoFrontal.type)) {
-        alert('La Foto Cédula Frontal debe ser JPG o PNG');
-        return;
-    }
-    if (fotoDetras && !['image/png', 'image/jpeg'].includes(fotoDetras.type)) {
-        alert('La Foto Cédula Detrás debe ser JPG o PNG');
-        return;
-    }
-    if (comprobante && comprobante.type !== 'application/pdf') {
-        alert('El Comprobante de Pago debe ser un archivo PDF');
-        return;
+    openBtn.onclick = function() {
+        modal.style.display = "block";
     }
 
-    // Si todo es válido, puedes proceder a enviar los datos (por correo o backend)
-    alert('Matrícula enviada exitosamente');
-});
-document.querySelector('.floating-matricula-btn').addEventListener('click', function () {
-    const modal = new bootstrap.Modal(document.getElementById('matriculaModal'));
-    modal.show();
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        if (validateForm()) {
+            sendEmail();
+        }
+    }
+
+    function validateForm() {
+        let isValid = true;
+        const inputs = form.querySelectorAll('input[required]');
+        inputs.forEach(input => {
+            if (!input.value) {
+                isValid = false;
+                input.style.borderColor = 'red';
+            } else {
+                input.style.borderColor = '';
+            }
+        });
+        return isValid;
+    }
+
+    function sendEmail() {
+        const formData = new FormData(form);
+        let body = '';
+        for (let [key, value] of formData.entries()) {
+            if (key !== 'fotoCedFrontal' && key !== 'fotoCedDetras' && key !== 'comprobantePago') {
+                body += `${key}: ${value}\n`;
+            }
+        }
+
+        Email.send({
+            SecureToken: "YOUR_SMTP_SECURE_TOKEN", // Reemplaza esto con tu token seguro de SMTP
+            To: 'destinatario@ejemplo.com', // Reemplaza con el correo del destinatario
+            From: "tu-email@ejemplo.com", // Reemplaza con tu correo
+            Subject: "Nueva Matrícula Rápida",
+            Body: body
+        }).then(
+            message => {
+                alert("Formulario enviado correctamente");
+                modal.style.display = "none";
+                form.reset();
+            }
+        );
+    }
 });

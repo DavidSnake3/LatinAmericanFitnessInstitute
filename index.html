@@ -16,7 +16,6 @@
 
     <!-- Metadatos SEO -->
     <meta http-equiv="Content-Language" content="es">
-    <link rel="canonical" href="https://www.lafit.com">
 
 
     <!-- Metadatos para redes sociales -->
@@ -83,7 +82,7 @@
 
         <!-- Matricular -->
         <button class="btn btn-primary floating-matricula-btn" id="btnMatriculaRapida" data-bs-toggle="modal" data-bs-target="#matriculaModal">
-            Matrícula Rápida
+            Matrícula Ahora
         </button>
 
         <!-- Botón de WhatsApp -->
@@ -665,60 +664,59 @@
 
     </div>
 
-    <!-- Modal Matrícula Rápida -->
-    <div class="modal fade" id="matriculaModal" tabindex="-1" aria-labelledby="matriculaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+     <!-- Modal Matrícula Rápida -->
+     <div class="modal fade" id="matriculaModal" tabindex="-1" aria-labelledby="matriculaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="matriculaModalLabel">Matrícula Rápida</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form id="matriculaForm">
-                        <!-- Campos de entrada -->
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="nombreCompleto" class="form-label">Nombre Completo</label>
                             <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="cedula" class="form-label">Cédula</label>
                             <input type="text" class="form-control" id="cedula" name="cedula" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="lugarDomicilio" class="form-label">Lugar de Domicilio</label>
                             <input type="text" class="form-control" id="lugarDomicilio" name="lugarDomicilio" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="fotoCedFrontal" class="form-label">Foto Cédula Frontal (JPG, PNG)</label>
-                            <input type="file" class="form-control" id="fotoCedFrontal" name="fotoCedFrontal" accept=".jpg,.png" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="fotoCedDetras" class="form-label">Foto Cédula Detrás (JPG, PNG)</label>
-                            <input type="file" class="form-control" id="fotoCedDetras" name="fotoCedDetras" accept=".jpg,.png" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="comprobantePago" class="form-label">Comprobante de Pago (PDF)</label>
-                            <input type="file" class="form-control" id="comprobantePago" name="comprobantePago" accept=".pdf" required>
-                        </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="telefono" class="form-label">Teléfono</label>
                             <input type="tel" class="form-control" id="telefono" name="telefono" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-4">
                             <label for="email" class="form-label">Correo Electrónico</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
-
-                        <!-- Información bancaria -->
-                        <div class="mt-5 p-3 bg-light border rounded">
-                            <h5>Información Bancaria</h5>
-                            <p><strong>Cuenta BAC:</strong> AAAAAAAAAA</p>
-                            <p><strong>Número de cuenta BAC:</strong> 123123123</p>
-                            <p><strong>Número de cuenta IBAN:</strong> 123123123</p>
-                            <p><strong>SINPE:</strong> 123123</p>
-                            <p><strong>A nombre de:</strong> BC GYM FITNESS S.A</p>
+                        <div class="mb-4">
+                            <label for="fotoCedFrontal" class="form-label">Foto Cédula Frontal</label>
+                            <input type="file" class="form-control" id="fotoCedFrontal" name="fotoCedFrontal" accept=".jpg,.png" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="fotoCedDetras" class="form-label">Foto Cédula Detrás</label>
+                            <input type="file" class="form-control" id="fotoCedDetras" name="fotoCedDetras" accept=".jpg,.png" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="comprobantePago" class="form-label">Comprobante de Pago</label>
+                            <input type="file" class="form-control" id="comprobantePago" name="comprobantePago" accept=".pdf" required>
                         </div>
                     </form>
+                    <div class="banking-info">
+                        <h5>CUENTA BANCARIA</h5>
+                        <img src="img/bac_logo.png" alt="BAC Logo" class="bank-logo">
+                        <p><strong>Cliente: MAX ACUÑA VARGAS</strong></p>
+                        <p>Cuenta Corriente BAC Colones: <strong>722621000</strong></p>
+                        <p>Cuenta IBAN: <strong>CR27010200007226210006</strong></p>
+                        <p><strong>SINPE</strong></p>
+                        <p>Número: 84806925</p>
+                        <p>Nombre: BC GYM FITNESS S A</p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -803,71 +801,6 @@
     <script src="SCRIPTS/AvisoPromocional.js"></script>
     <script src="SCRIPTS/PorqueElegirnos.js"></script>
     <script src="SCRIPTS/Matricula.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const cartButton = document.getElementById('openCart');
-            const cartBadge = document.getElementById('cartBadge');
-            const modal = document.getElementById('addToCartModal');
-            const modalContent = modal.querySelector('.modal-content');
-            const modalMessage = document.getElementById('modalMessage');
-            const closeBtn = modal.querySelector('.close');
-            let cart = JSON.parse(localStorage.getItem('cart')) || { items: [] };
-
-            function updateCartBadge() {
-                cartBadge.textContent = cart.items.length;
-            }
-
-            function showModal(message) {
-                modalMessage.textContent = message;
-                modal.style.display = 'block';
-                modalContent.classList.remove('animate__fadeOut');
-                modalContent.classList.add('animate__fadeIn');
-                setTimeout(() => {
-                    modalContent.classList.remove('animate__fadeIn');
-                    modalContent.classList.add('animate__fadeOut');
-                    setTimeout(() => {
-                        modal.style.display = 'none';
-                    }, 1000);
-                }, 2000);
-            }
-
-            function addToCart(package) {
-                cart.items.push(package);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartBadge();
-                showModal(`Se ha agregado el paquete ${package.name} al carrito`);
-            }
-
-            cartButton.addEventListener('click', function () {
-                window.location.href = 'carrito.html';
-            });
-
-            closeBtn.addEventListener('click', function () {
-                modal.style.display = 'none';
-            });
-
-            window.addEventListener('click', function (event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            document.getElementById('pricingContainer').addEventListener('click', function (e) {
-                if (e.target.classList.contains('select-package')) {
-                    const packageName = e.target.dataset.packageName;
-                    const package = {
-                        name: packageName,
-                        price: e.target.closest('.pricing-card').querySelector('.price').textContent,
-                        type: 'package'
-                    };
-                    addToCart(package);
-                }
-            });
-
-            updateCartBadge();
-        });
-    </script>
 
 </body>
 
